@@ -24,8 +24,7 @@
                 <span style="color:#f5a014;">Architect</span>
             </h1>
             <p class="hero-item" style="--delay:0.4s; font-size:1.05rem; color:rgba(255,255,255,0.55); max-width:32rem; line-height:1.75; margin-bottom:2rem;">
-                ออกแบบประสบการณ์การใช้ชีวิตในบ้านอัจฉริยะ<br>
-                ระบบครบวงจร พร้อมทีมสนับสนุนตัวแทนจำหน่าย
+                ออกแบบประสบการณ์การใช้ชีวิตในบ้านอัจฉริยะ
             </p>
             <div class="flex flex-wrap gap-4 hero-item" style="--delay:0.55s;">
                 <a href="{{ route('dealer') }}" class="btn-gold">เริ่มต้นเป็นตัวแทน</a>
