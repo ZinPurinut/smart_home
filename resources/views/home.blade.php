@@ -49,7 +49,202 @@
 </section>
 
 {{-- ===================================================
-     2. WHO WE ARE
+     2. IPHONE SERIES — AG GLASS FLAGSHIP
+     =================================================== --}}
+
+{{-- 2a. Opening statement (Apple-style) --}}
+<section id="ag-glass" style="background:#000; padding:7rem 2rem; text-align:center; position:relative; overflow:hidden;">
+    <div class="reveal max-w-4xl mx-auto">
+        <p style="font-size:0.7rem; letter-spacing:0.35em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:1.5rem;">
+            S.SMART Flagship Series
+        </p>
+        <h2 style="font-size:clamp(2.8rem,7vw,5.5rem); font-weight:700; letter-spacing:-0.03em; color:#fff; line-height:1.05; margin-bottom:1rem;">
+            วัสดุเดียวกับ<br>
+            <span style="background:linear-gradient(135deg,#e8e8e8 0%,#a0a0a0 40%,#ffffff 60%,#888 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">iPhone.</span>
+        </h2>
+        <p style="font-size:1.15rem; color:rgba(255,255,255,0.45); margin-top:1.25rem; line-height:1.7;">
+            สวิตช์ไฟ AG Glass ระดับ Premium<br>
+            <strong style="color:rgba(255,255,255,0.75);">มีเราเจ้าเดียวในไทย</strong> ที่นำวัสดุ AG Glass
+            จากอุตสาหกรรมเดียวกับที่ Apple ใช้ผลิต iPhone<br>
+            มาออกแบบเป็นสวิตช์ไฟสำหรับโครงการระดับไฮเอนด์
+        </p>
+    </div>
+</section>
+
+{{-- 2b. Hero product shot --}}
+<section class="section-full reveal" style="background:#000;">
+    <div class="absolute inset-0">
+        <img src="{{ asset('images/iphone-series/img5571.png') }}"
+             alt="S.SMART AG Glass Switch — วัสดุเดียวกับ iPhone"
+             class="w-full h-full object-cover object-center"
+             style="opacity:0.9;">
+        <div class="absolute inset-0" style="background:linear-gradient(to top, #000 0%, transparent 40%, #000 100%);"></div>
+    </div>
+    <div class="absolute bottom-12 left-0 right-0 text-center relative z-10">
+        <p style="font-size:0.65rem; letter-spacing:0.4em; text-transform:uppercase; color:rgba(255,255,255,0.35);">
+            AG Glass Series — ที่สุดของดีไซน์และนวัตกรรม
+        </p>
+    </div>
+</section>
+
+{{-- 2c. AG Glass: Why — 3-feature Apple-style callouts --}}
+<section class="reveal" style="background:#000; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+            <h2 style="font-size:clamp(2rem,4.5vw,3.5rem); font-weight:700; letter-spacing:-0.03em; color:#fff; margin-bottom:1rem;">
+                ทำไมต้อง AG Glass?
+            </h2>
+            <p style="color:rgba(255,255,255,0.4); font-size:0.95rem;">
+                Anti-Glare Glass — วัสดุระดับ Premium ที่ Apple เลือกใช้บน iPhone
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(255,255,255,0.06);">
+            @foreach([
+                [
+                    'สัมผัสเนียนหรู ไร้รอยนิ้วมือ',
+                    'Fingerprint-resistant',
+                    'ผิวสัมผัสที่ผ่านการบำบัดพิเศษ ป้องกันรอยนิ้วมือ ดูสะอาดตลอดเวลา ไม่ต้องเช็ดบ่อย',
+                    'M',
+                ],
+                [
+                    'กันรอยขีดข่วน ทนทานยาวนาน',
+                    'Scratch-resistant',
+                    'ความแข็งผิวสูง ทนทานต่อการขีดข่วนในชีวิตประจำวัน อายุการใช้งานยาวนานกว่ากระจกทั่วไป',
+                    'S',
+                ],
+                [
+                    'ลดแสงสะท้อน ไม่แยงตา',
+                    'Anti-glare surface',
+                    'กระจายแสงอย่างนุ่มนวล ช่วยลดการสะท้อนของแสงในห้องที่มีแสงจ้า เหมาะกับงาน Interior ทุกสไตล์',
+                    'A',
+                ],
+            ] as $feat)
+            <div style="background:#000; padding:2.5rem 2rem; text-align:center;">
+                <div style="width:48px; height:48px; margin:0 auto 1.25rem; border-radius:50%; background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:700; color:rgba(255,255,255,0.5);">
+                    {{ $feat[3] }}
+                </div>
+                <div style="font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:0.75rem;">
+                    {{ $feat[1] }}
+                </div>
+                <h3 style="font-size:1.05rem; font-weight:600; color:#fff; margin-bottom:0.75rem; line-height:1.4;">
+                    {{ $feat[0] }}
+                </h3>
+                <p style="font-size:0.8rem; color:rgba(255,255,255,0.35); line-height:1.7;">
+                    {{ $feat[2] }}
+                </p>
+            </div>
+            @endforeach
+        </div>
+
+        {{-- Material stack --}}
+        <div class="flex flex-wrap justify-center gap-3 mt-10">
+            @foreach(['AG Glass','Tempered Glass','Stainless Frame','Polycarbonate Back'] as $mat)
+            <span style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.12); padding:6px 18px; border-radius:100px;">
+                {{ $mat }}
+            </span>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- 2d. 4 Colors — Apple color picker style --}}
+<section class="reveal" style="background:#000; padding:4rem 2rem 6rem; text-align:center;">
+    <div class="max-w-5xl mx-auto">
+        <p style="font-size:0.65rem; letter-spacing:0.35em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:0.75rem;">
+            4 สีพรีเมียม
+        </p>
+        <h2 style="font-size:clamp(1.8rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-bottom:3rem;">
+            หรูหราทุกเฉดสี เพื่อความสมบูรณ์แบบ<br>
+            ของทุกดีไซน์บ้าน
+        </h2>
+
+        <img src="{{ asset('images/iphone-series/img561LUXURY_3.png') }}"
+             alt="S.SMART 4 สี ขาวมุก ทองแชมเปญ ดำโอปซิเดียน ดำกราไฟต์"
+             class="w-full max-w-lg mx-auto block"
+             style="border-radius:4px;">
+
+        {{-- Color labels --}}
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
+            @foreach([
+                ['#e8e4dc','ขาวมุก'],
+                ['#c9a96e','ทองแชมเปญ'],
+                ['#1a1a2e','ดำโอปซิเดียน'],
+                ['#3a3a3a','ดำกราไฟต์'],
+            ] as $color)
+            <div class="flex flex-col items-center gap-2">
+                <div style="width:20px; height:20px; border-radius:50%; background:{{ $color[0] }}; border:1px solid rgba(255,255,255,0.2);"></div>
+                <span style="font-size:0.7rem; color:rgba(255,255,255,0.4);">{{ $color[1] }}</span>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- 2e. Sizes + Smart specs bar --}}
+<section class="reveal" style="background:#050505; padding:5rem 2rem; border-top:1px solid rgba(255,255,255,0.04);">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="section-label">ขนาดมาตรฐาน</span>
+                <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.2; margin-bottom:1.5rem;">
+                    รองรับทั้งมาตรฐาน<br>
+                    <span style="color:#f5a014;">ไทยและยุโรป</span>
+                </h2>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div style="border:1px solid rgba(255,255,255,0.08); padding:1.25rem;">
+                        <div style="font-size:1.4rem; font-weight:700; color:#fff; font-family:'Nunito',sans-serif;">2×4″</div>
+                        <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#f5a014; margin:4px 0;">Thailand Size</div>
+                        <div style="font-size:0.75rem; color:rgba(255,255,255,0.35);">120×74mm — ใส่แทนบ็อกซ์เดิมได้ทันที ไม่ต้องเจาะผนังใหม่</div>
+                    </div>
+                    <div style="border:1px solid rgba(255,255,255,0.08); padding:1.25rem;">
+                        <div style="font-size:1.4rem; font-weight:700; color:#fff; font-family:'Nunito',sans-serif;">3×3″</div>
+                        <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#f5a014; margin:4px 0;">EU Size</div>
+                        <div style="font-size:0.75rem; color:rgba(255,255,255,0.35);">86×86mm — มาตรฐานยุโรป เหมาะกับบ้านใหม่ งาน Interior สมัยใหม่</div>
+                    </div>
+                </div>
+
+                {{-- Smart specs --}}
+                <div class="grid grid-cols-3 gap-3">
+                    @foreach([
+                        ['WiFi','2.4GHz'],
+                        ['Zigbee','3.0'],
+                        ['Matter','Ready'],
+                        ['Neutral','ไม่ต้องการ N-wire'],
+                        ['Tuya','Certified'],
+                        ['Protocol','Private SDK'],
+                    ] as $spec)
+                    <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); padding:0.6rem 0.75rem;">
+                        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:#f5a014;">{{ $spec[0] }}</div>
+                        <div style="font-size:0.75rem; color:rgba(255,255,255,0.5); margin-top:2px;">{{ $spec[1] }}</div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="reveal">
+                <img src="{{ asset('images/iphone-series/img619standard_Size.png') }}"
+                     alt="S.SMART Switch Size EU 3x3 and Thailand 2x4"
+                     class="w-full"
+                     style="border-radius:4px; opacity:0.9;">
+            </div>
+        </div>
+
+        {{-- CTA --}}
+        <div class="text-center mt-12 pt-10" style="border-top:1px solid rgba(255,255,255,0.05);">
+            <p style="font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1rem;">
+                "ไม่ใช่แค่สวย หรู หรือดูแพง<br>แต่เรายังแฝงความอัจฉริยะเข้าไปด้วย"
+            </p>
+            <a href="https://www.ssmartluxuryswitch.com/salepage/iphone_series-salepage.aspx"
+               target="_blank" rel="noopener noreferrer" class="btn-gold">
+                ดู iPhone Series ทั้งหมด
+            </a>
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     3. WHO WE ARE
      =================================================== --}}
 <section class="reveal" id="about" style="background:#0a0a0a; padding:6rem 2rem;">
     <div class="max-w-7xl mx-auto">
