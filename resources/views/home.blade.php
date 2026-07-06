@@ -1,43 +1,41 @@
 @extends('layouts.app')
 
-@section('title', 'S.Smart | Smart Living Architect — ออกแบบประสบการณ์การใช้ชีวิตในบ้านอัจฉริยะ')
+@section('title', 'S.SMART — Smart Living Architect | ผู้ออกแบบประสบการณ์การอยู่อาศัยด้วยเทคโนโลยี')
 
 @section('content')
 
 {{-- ===================================================
-     1. HERO
+     1. HERO — Designing Intelligent Living
+     Background: Lifestyle คือพระเอก (ไม่ใช้ภาพสินค้า)
+     TODO: เมื่อได้ภาพ Luxury Modern House ช่วงเย็น เปิดไฟ Warm White
+           ให้เปลี่ยน src ด้านล่างเป็น images/hero/luxury-house-dusk.jpg
      =================================================== --}}
 <section class="section-full" id="hero" style="background:#050505;">
-    {{-- Background: real project photo --}}
     <div class="absolute inset-0 overflow-hidden">
-        <img src="{{ asset('images/projects/hero-panel.jpg') }}" alt="S.SMART Smart Living System"
-             class="w-full h-full object-cover object-center opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
+        <img src="{{ asset('images/proof/curtain-sheer-city.jpg') }}" alt="S.SMART Smart Living"
+             class="w-full h-full object-cover object-center" style="opacity:0.45;">
+        {{-- Warm-white color grade ให้ภาพอบอุ่นแบบช่วงเย็น --}}
+        <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(60,35,5,0.55) 0%, rgba(10,8,5,0.75) 60%, #050505 100%);"></div>
+        <div class="absolute inset-0" style="background:radial-gradient(ellipse 70% 60% at 75% 45%, rgba(201,169,110,0.14) 0%, transparent 65%);"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
     </div>
 
     <div class="section-content w-full">
         <div class="max-w-7xl mx-auto">
-            <p class="section-label hero-item" style="--delay:0.1s;">Dealer Welcome Center</p>
-            <h1 class="hero-item" style="--delay:0.25s; font-size:clamp(2.8rem,7vw,5.5rem); font-weight:700; letter-spacing:-0.03em; line-height:1.05; color:#fff; margin-bottom:1rem;">
-                Smart Living<br>
-                <span style="color:#f5a014;">Architect</span>
+            <p class="section-label hero-item" style="--delay:0.1s; color:rgba(201,169,110,0.85);">Designing Intelligent Living</p>
+            <h1 class="hero-item" style="--delay:0.25s; font-size:clamp(3.2rem,8vw,6.5rem); font-weight:700; letter-spacing:-0.03em; line-height:1; color:#fff; margin-bottom:0.75rem;">
+                S.SMART
             </h1>
-            <p class="hero-item" style="--delay:0.4s; font-size:1.05rem; color:rgba(255,255,255,0.55); max-width:32rem; line-height:1.75; margin-bottom:2rem;">
-                ออกแบบประสบการณ์การใช้ชีวิตในบ้านอัจฉริยะ
+            <p class="hero-item" style="--delay:0.35s; font-size:clamp(1.3rem,3vw,2.2rem); font-weight:600; letter-spacing:-0.01em; color:#c9a96e; margin-bottom:1.5rem;">
+                Smart Living Architect
             </p>
-            <div class="flex flex-wrap gap-4 hero-item" style="--delay:0.55s;">
-                <a href="{{ route('dealer') }}" class="btn-gold">เริ่มต้นเป็นตัวแทน</a>
-                <a href="#ecosystem" class="btn-outline">ดูระบบทั้งหมด</a>
-            </div>
-
-            {{-- Visitor types --}}
-            <div class="hero-item mt-12 flex flex-wrap gap-3" style="--delay:0.7s;">
-                @foreach(['ผู้รับเหมา','ช่างไฟฟ้า','Interior Designer','System Integrator','บริษัทรับสร้างบ้าน'] as $type)
-                <span style="font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.3); border:1px solid rgba(255,255,255,0.1); padding:4px 12px;">
-                    {{ $type }}
-                </span>
-                @endforeach
+            <p class="hero-item" style="--delay:0.5s; font-size:1.05rem; color:rgba(255,255,255,0.6); max-width:30rem; line-height:1.8; margin-bottom:2.5rem;">
+                เราออกแบบประสบการณ์การอยู่อาศัย<br>
+                ด้วยเทคโนโลยีที่เรียบง่าย สวยงาม และเชื่อถือได้
+            </p>
+            <div class="flex flex-wrap gap-4 hero-item" style="--delay:0.65s;">
+                <a href="#about" class="btn-gold">เกี่ยวกับเรา</a>
+                <a href="#categories" class="btn-outline">หมวดหมู่สินค้า</a>
             </div>
         </div>
     </div>
@@ -49,243 +47,62 @@
 </section>
 
 {{-- ===================================================
-     2. IPHONE SERIES — AG GLASS FLAGSHIP
+     2. PHILOSOPHY WORDING
      =================================================== --}}
-
-{{-- 2a. Opening statement (Apple-style) --}}
-<section id="ag-glass" style="background:#000; padding:7rem 2rem; text-align:center; position:relative; overflow:hidden;">
-    <div class="reveal max-w-4xl mx-auto">
-        <p style="font-size:0.7rem; letter-spacing:0.35em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:1.5rem;">
-            S.SMART Flagship Series
+<section class="reveal" style="background:#000; padding:7rem 2rem; text-align:center;">
+    <div class="max-w-4xl mx-auto">
+        <blockquote style="font-size:clamp(1.6rem,3.5vw,2.6rem); font-weight:600; color:#fff; line-height:1.4; letter-spacing:-0.02em; margin-bottom:2rem;">
+            Technology should blend naturally<br>
+            <span class="gradient-gold">into everyday living.</span>
+        </blockquote>
+        <p style="color:rgba(255,255,255,0.5); font-size:1rem; line-height:2; max-width:32rem; margin:0 auto;">
+            เราเชื่อว่าเทคโนโลยีที่ดีที่สุด<br>
+            คือเทคโนโลยีที่กลมกลืนกับการใช้ชีวิต<br>
+            <span style="color:rgba(255,255,255,0.35);">ไม่ซับซ้อน ไม่รบกวน แต่พร้อมดูแลทุกช่วงเวลาของชีวิต</span>
         </p>
-        <h2 style="font-size:clamp(2.8rem,7vw,5.5rem); font-weight:700; letter-spacing:-0.03em; color:#fff; line-height:1.05; margin-bottom:1rem;">
-            วัสดุเดียวกับ<br>
-            <span style="background:linear-gradient(135deg,#e8e8e8 0%,#a0a0a0 40%,#ffffff 60%,#888 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">iPhone.</span>
-        </h2>
-        <p style="font-size:1.15rem; color:rgba(255,255,255,0.45); margin-top:1.25rem; line-height:1.7;">
-            สวิตช์ไฟ AG Glass ระดับ Premium<br>
-            <strong style="color:rgba(255,255,255,0.75);">มีเราเจ้าเดียวในไทย</strong> ที่นำวัสดุ AG Glass
-            จากอุตสาหกรรมเดียวกับที่ Apple ใช้ผลิต iPhone<br>
-            มาออกแบบเป็นสวิตช์ไฟสำหรับโครงการระดับไฮเอนด์
-        </p>
-    </div>
-</section>
-
-{{-- 2b. Hero product shot --}}
-<section class="section-full reveal" style="background:#000;">
-    <div class="absolute inset-0">
-        <img src="{{ asset('images/iphone-series/img5571.png') }}"
-             alt="S.SMART AG Glass Switch — วัสดุเดียวกับ iPhone"
-             class="w-full h-full object-cover object-center"
-             style="opacity:0.9;">
-        <div class="absolute inset-0" style="background:linear-gradient(to top, #000 0%, transparent 40%, #000 100%);"></div>
-    </div>
-    <div class="absolute bottom-12 left-0 right-0 text-center relative z-10">
-        <p style="font-size:0.65rem; letter-spacing:0.4em; text-transform:uppercase; color:rgba(255,255,255,0.35);">
-            AG Glass Series — ที่สุดของดีไซน์และนวัตกรรม
-        </p>
-    </div>
-</section>
-
-{{-- 2c. AG Glass: Why — 3-feature Apple-style callouts --}}
-<section class="reveal" style="background:#000; padding:6rem 2rem;">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-14">
-            <h2 style="font-size:clamp(2rem,4.5vw,3.5rem); font-weight:700; letter-spacing:-0.03em; color:#fff; margin-bottom:1rem;">
-                ทำไมต้อง AG Glass?
-            </h2>
-            <p style="color:rgba(255,255,255,0.4); font-size:0.95rem;">
-                Anti-Glare Glass — วัสดุระดับ Premium ที่ Apple เลือกใช้บน iPhone
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(255,255,255,0.06);">
-            @foreach([
-                [
-                    'สัมผัสเนียนหรู ไร้รอยนิ้วมือ',
-                    'Fingerprint-resistant',
-                    'ผิวสัมผัสที่ผ่านการบำบัดพิเศษ ป้องกันรอยนิ้วมือ ดูสะอาดตลอดเวลา ไม่ต้องเช็ดบ่อย',
-                    'M',
-                ],
-                [
-                    'กันรอยขีดข่วน ทนทานยาวนาน',
-                    'Scratch-resistant',
-                    'ความแข็งผิวสูง ทนทานต่อการขีดข่วนในชีวิตประจำวัน อายุการใช้งานยาวนานกว่ากระจกทั่วไป',
-                    'S',
-                ],
-                [
-                    'ลดแสงสะท้อน ไม่แยงตา',
-                    'Anti-glare surface',
-                    'กระจายแสงอย่างนุ่มนวล ช่วยลดการสะท้อนของแสงในห้องที่มีแสงจ้า เหมาะกับงาน Interior ทุกสไตล์',
-                    'A',
-                ],
-            ] as $feat)
-            <div style="background:#000; padding:2.5rem 2rem; text-align:center;">
-                <div style="width:48px; height:48px; margin:0 auto 1.25rem; border-radius:50%; background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:700; color:rgba(255,255,255,0.5);">
-                    {{ $feat[3] }}
-                </div>
-                <div style="font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:0.75rem;">
-                    {{ $feat[1] }}
-                </div>
-                <h3 style="font-size:1.05rem; font-weight:600; color:#fff; margin-bottom:0.75rem; line-height:1.4;">
-                    {{ $feat[0] }}
-                </h3>
-                <p style="font-size:0.8rem; color:rgba(255,255,255,0.35); line-height:1.7;">
-                    {{ $feat[2] }}
-                </p>
-            </div>
-            @endforeach
-        </div>
-
-        {{-- Material stack --}}
-        <div class="flex flex-wrap justify-center gap-3 mt-10">
-            @foreach(['AG Glass','Tempered Glass','Stainless Frame','Polycarbonate Back'] as $mat)
-            <span style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.12); padding:6px 18px; border-radius:100px;">
-                {{ $mat }}
-            </span>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-{{-- 2d. 4 Colors — Apple color picker style --}}
-<section class="reveal" style="background:#000; padding:4rem 2rem 6rem; text-align:center;">
-    <div class="max-w-5xl mx-auto">
-        <p style="font-size:0.65rem; letter-spacing:0.35em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:0.75rem;">
-            4 สีพรีเมียม
-        </p>
-        <h2 style="font-size:clamp(1.8rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-bottom:3rem;">
-            หรูหราทุกเฉดสี เพื่อความสมบูรณ์แบบ<br>
-            ของทุกดีไซน์บ้าน
-        </h2>
-
-        <img src="{{ asset('images/iphone-series/img561LUXURY_3.png') }}"
-             alt="S.SMART 4 สี ขาวมุก ทองแชมเปญ ดำโอปซิเดียน ดำกราไฟต์"
-             class="w-full max-w-lg mx-auto block"
-             style="border-radius:4px;">
-
-        {{-- Color labels --}}
-        <div class="flex flex-wrap justify-center gap-6 mt-8">
-            @foreach([
-                ['#e8e4dc','ขาวมุก'],
-                ['#c9a96e','ทองแชมเปญ'],
-                ['#1a1a2e','ดำโอปซิเดียน'],
-                ['#3a3a3a','ดำกราไฟต์'],
-            ] as $color)
-            <div class="flex flex-col items-center gap-2">
-                <div style="width:20px; height:20px; border-radius:50%; background:{{ $color[0] }}; border:1px solid rgba(255,255,255,0.2);"></div>
-                <span style="font-size:0.7rem; color:rgba(255,255,255,0.4);">{{ $color[1] }}</span>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-{{-- 2e. Sizes + Smart specs bar --}}
-<section class="reveal" style="background:#050505; padding:5rem 2rem; border-top:1px solid rgba(255,255,255,0.04);">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="section-label">ขนาดมาตรฐาน</span>
-                <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.2; margin-bottom:1.5rem;">
-                    รองรับทั้งมาตรฐาน<br>
-                    <span style="color:#f5a014;">ไทยและยุโรป</span>
-                </h2>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                    <div style="border:1px solid rgba(255,255,255,0.08); padding:1.25rem;">
-                        <div style="font-size:1.4rem; font-weight:700; color:#fff; font-family:'Nunito',sans-serif;">2×4″</div>
-                        <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#f5a014; margin:4px 0;">Thailand Size</div>
-                        <div style="font-size:0.75rem; color:rgba(255,255,255,0.35);">120×74mm — ใส่แทนบ็อกซ์เดิมได้ทันที ไม่ต้องเจาะผนังใหม่</div>
-                    </div>
-                    <div style="border:1px solid rgba(255,255,255,0.08); padding:1.25rem;">
-                        <div style="font-size:1.4rem; font-weight:700; color:#fff; font-family:'Nunito',sans-serif;">3×3″</div>
-                        <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#f5a014; margin:4px 0;">EU Size</div>
-                        <div style="font-size:0.75rem; color:rgba(255,255,255,0.35);">86×86mm — มาตรฐานยุโรป เหมาะกับบ้านใหม่ งาน Interior สมัยใหม่</div>
-                    </div>
-                </div>
-
-                {{-- Smart specs --}}
-                <div class="grid grid-cols-3 gap-3">
-                    @foreach([
-                        ['WiFi','2.4GHz'],
-                        ['Zigbee','3.0'],
-                        ['Matter','Ready'],
-                        ['Neutral','ไม่ต้องการ N-wire'],
-                        ['Tuya','Certified'],
-                        ['Protocol','Private SDK'],
-                    ] as $spec)
-                    <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); padding:0.6rem 0.75rem;">
-                        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:#f5a014;">{{ $spec[0] }}</div>
-                        <div style="font-size:0.75rem; color:rgba(255,255,255,0.5); margin-top:2px;">{{ $spec[1] }}</div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <div class="reveal">
-                <img src="{{ asset('images/iphone-series/img619standard_Size.png') }}"
-                     alt="S.SMART Switch Size EU 3x3 and Thailand 2x4"
-                     class="w-full"
-                     style="border-radius:4px; opacity:0.9;">
-            </div>
-        </div>
-
-        {{-- CTA --}}
-        <div class="text-center mt-12 pt-10" style="border-top:1px solid rgba(255,255,255,0.05);">
-            <p style="font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:1rem;">
-                "ไม่ใช่แค่สวย หรู หรือดูแพง<br>แต่เรายังแฝงความอัจฉริยะเข้าไปด้วย"
-            </p>
-            <a href="https://www.ssmartluxuryswitch.com/salepage/iphone_series-salepage.aspx"
-               target="_blank" rel="noopener noreferrer" class="btn-gold">
-                ดู iPhone Series ทั้งหมด
-            </a>
-        </div>
     </div>
 </section>
 
 {{-- ===================================================
-     3. WHO WE ARE
+     3. ABOUT — เราเป็นใคร (Story)
      =================================================== --}}
 <section class="reveal" id="about" style="background:#0a0a0a; padding:6rem 2rem;">
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <span class="section-label">รู้จักเรา</span>
-                <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.1; margin-bottom:1.5rem;">
-                    S.SMART<br>
-                    ไม่ใช่ผู้จำหน่าย<br>
-                    <span style="color:#f5a014;">สวิตช์ไฟ</span>
+                <span class="section-label">เกี่ยวกับเรา</span>
+                <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.15; margin-bottom:1.5rem;">
+                    เราไม่ใช่ผู้ขาย Smart Home<br>
+                    <span style="color:#c9a96e;">เราคือผู้ออกแบบ Smart Living</span>
                 </h2>
-                <p style="color:rgba(255,255,255,0.5); font-size:1rem; line-height:1.85; margin-bottom:1.5rem;">
-                    เราคือ <strong style="color:rgba(255,255,255,0.8);">Smart Living Architect</strong> — ผู้ออกแบบระบบบ้านอัจฉริยะครบวงจร
-                    ที่ใส่ใจทั้งฟังก์ชันการทำงาน งานออกแบบ และประสบการณ์การใช้ชีวิตของเจ้าของบ้าน
-                </p>
-                <p style="color:rgba(255,255,255,0.5); font-size:1rem; line-height:1.85; margin-bottom:2rem;">
-                    เราไม่ได้นำสินค้าจากโรงงานมาติดโลโก้แล้วขาย
-                    แต่ใช้เวลาคัดเลือกโรงงานและพันธมิตรที่มีมาตรฐานสูง
-                    และพัฒนาสินค้าให้เหมาะกับการใช้งานในประเทศไทย
-                </p>
-
-                <div class="grid grid-cols-3 gap-6">
-                    @foreach([['10+','ปีประสบการณ์'],['8','หมวดระบบ'],['100%','Tuya Certified']] as $stat)
-                    <div>
-                        <div style="font-size:1.75rem; font-weight:700; color:#f5a014; font-family:'Nunito',sans-serif;">{{ $stat[0] }}</div>
-                        <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:2px;">{{ $stat[1] }}</div>
-                    </div>
-                    @endforeach
+                <div class="space-y-5">
+                    <p style="color:rgba(255,255,255,0.5); font-size:0.98rem; line-height:1.9;">
+                        S.SMART เริ่มต้นจากการพัฒนาสวิตช์ไฟระดับพรีเมียม
+                        ก่อนต่อยอดสู่การออกแบบระบบ Smart Living
+                        ที่เชื่อมโยงทุกอุปกรณ์ภายในบ้านเข้าด้วยกัน
+                    </p>
+                    <p style="color:rgba(255,255,255,0.5); font-size:0.98rem; line-height:1.9;">
+                        เราให้ความสำคัญกับการคัดเลือกวัสดุ คุณภาพการผลิต
+                        และประสบการณ์การใช้งาน
+                        เพื่อให้ทุกผลิตภัณฑ์สามารถทำงานร่วมกันได้อย่างลงตัว
+                    </p>
+                    <p style="color:rgba(255,255,255,0.65); font-size:0.98rem; line-height:1.9;">
+                        เพราะเราเชื่อว่า Smart Living ที่ดี
+                        ไม่ได้เริ่มจากการมีอุปกรณ์จำนวนมาก
+                        แต่เริ่มจาก<strong style="color:#c9a96e;">การออกแบบระบบที่เหมาะสมกับการใช้ชีวิตของแต่ละคน</strong>
+                    </p>
                 </div>
             </div>
 
             <div class="relative reveal">
-                <img src="{{ asset('images/projects/team-install.jpg') }}"
-                     alt="S.SMART technician installing smart lock"
+                <img src="{{ asset('images/proof/panel-hall-wide.jpg') }}"
+                     alt="ระบบ Smart Living ที่ออกแบบและติดตั้งโดย S.SMART ในบ้านจริง"
                      class="w-full object-cover"
-                     style="height:520px; filter:brightness(0.88);">
+                     style="height:520px; filter:brightness(0.9);">
                 <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 60%, #0a0a0a 100%);"></div>
-                {{-- Badge --}}
-                <div class="absolute bottom-6 left-6" style="background:rgba(0,0,0,0.75); backdrop-filter:blur(12px); padding:12px 20px; border:1px solid rgba(245,160,20,0.3);">
-                    <div style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:#f5a014; margin-bottom:2px;">S.SMART Team</div>
-                    <div style="font-size:0.85rem; color:#fff;">ติดตั้งโดยทีมมืออาชีพ</div>
+                <div class="absolute bottom-6 left-6" style="background:rgba(0,0,0,0.75); backdrop-filter:blur(12px); padding:12px 20px; border:1px solid rgba(201,169,110,0.3);">
+                    <div style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:#c9a96e; margin-bottom:2px;">Real Project</div>
+                    <div style="font-size:0.85rem; color:#fff;">ระบบจริง ในบ้านจริง โดยทีม S.SMART</div>
                 </div>
             </div>
         </div>
@@ -293,278 +110,72 @@
 </section>
 
 {{-- ===================================================
-     3. BRAND PHILOSOPHY
+     4. 8 PRODUCT CATEGORIES — ลิงก์ไปหมวดสินค้าในเว็บ
      =================================================== --}}
-<section class="reveal" style="background:#050505; padding:6rem 2rem; overflow:hidden; position:relative;">
-    {{-- Background number --}}
-    <div class="absolute right-0 top-0 select-none pointer-events-none" aria-hidden="true"
-         style="font-size:22rem; font-weight:900; color:rgba(255,255,255,0.02); line-height:1; font-family:'Nunito',sans-serif; letter-spacing:-0.05em;">
-        DNA
-    </div>
+<section class="reveal" id="categories" style="background:#050505; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="section-label">หมวดหมู่สินค้า</span>
+            <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
+                8 หมวดผลิตภัณฑ์ — ครบทั้งระบบ
+            </h2>
+        </div>
 
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-        <span class="section-label" style="color:rgba(245,160,20,0.6);">Brand DNA</span>
-        <blockquote style="font-size:clamp(1.4rem,3vw,2.2rem); font-weight:600; color:#fff; line-height:1.5; letter-spacing:-0.02em; margin:1.5rem 0 2.5rem;">
-            "เราไม่ได้เลือกสินค้าที่ขายง่ายที่สุด<br>
-            <span style="color:#f5a014;">แต่เราเลือกสินค้าที่ลูกค้าใช้งานได้ดีที่สุด"</span>
-        </blockquote>
-        <p style="color:rgba(255,255,255,0.45); font-size:0.95rem; line-height:1.85; max-width:36rem; margin:0 auto 3rem;">
-            เพราะเราเชื่อว่าบ้านอัจฉริยะที่ดี ไม่ได้เริ่มจากเทคโนโลยีที่ซับซ้อน
-            แต่เริ่มจากการเลือกอุปกรณ์ที่เชื่อถือได้
-            และออกแบบระบบให้เหมาะกับการใช้งานจริง
-        </p>
-
-        {{-- 5 DNA pillars --}}
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-left mt-4">
-            @foreach([
-                ['01','คัดเลือก','จากโรงงานที่มีมาตรฐาน ไม่ใช่ราคาถูกที่สุด'],
-                ['02','ใส่ใจ','ทุกรายละเอียดตั้งแต่วัสดุจนถึงงาน Design'],
-                ['03','ยืดหยุ่น','เริ่มจากจุดเล็กแล้วขยายระบบได้ในอนาคต'],
-                ['04','รับผิดชอบ','หากเกิดปัญหา เราพร้อมแก้ไขให้ลูกค้า'],
-                ['05','เติบโต','ไปพร้อมกับตัวแทนจำหน่ายของเรา'],
-            ] as $pillar)
-            <div style="padding:1.25rem; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
-                <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:0.5rem;">{{ $pillar[0] }}</div>
-                <div style="font-size:0.9rem; font-weight:600; color:#fff; margin-bottom:0.4rem;">{{ $pillar[1] }}</div>
-                <div style="font-size:0.75rem; color:rgba(255,255,255,0.35); line-height:1.5;">{{ $pillar[2] }}</div>
-            </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(255,255,255,0.06);">
+            @foreach($categories as $slug => $cat)
+            <a href="{{ route('category', $slug) }}"
+               class="group reveal" style="background:#0a0a0a; display:block; position:relative; overflow:hidden; transition-delay:{{ $loop->index * 50 }}ms;">
+                <div style="aspect-ratio:16/10; overflow:hidden;">
+                    <img src="{{ asset($cat['image']) }}" alt="{{ $cat['name'] }}"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                         style="opacity:0.55;">
+                </div>
+                <div style="padding:1.5rem;">
+                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#c9a96e; margin-bottom:0.6rem;">{{ $cat['no'] }} — {{ $cat['en'] }}</div>
+                    <h3 style="font-size:0.95rem; font-weight:600; color:#fff; margin-bottom:0.4rem; line-height:1.4;">{{ $cat['name'] }}</h3>
+                    <p style="font-size:0.75rem; color:rgba(255,255,255,0.35); line-height:1.6;">{{ $cat['desc'] }}</p>
+                    <div class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                         style="font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:#c9a96e;">ดูหมวดนี้ →</div>
+                </div>
+            </a>
             @endforeach
         </div>
     </div>
 </section>
 
 {{-- ===================================================
-     4. ECOSYSTEM — ระบบที่ทำงานร่วมกัน
+     5. WHY S.SMART — ทำไมต้องเรา (เติมภาพ + สถิติให้บาลานซ์)
      =================================================== --}}
-<section class="section-full reveal" id="ecosystem" style="background:#080508;">
-    <div class="absolute inset-0 overflow-hidden">
-        <img src="{{ asset('images/projects/system-panel.jpg') }}" alt="S.SMART Smart Home Control Panel"
-             class="w-full h-full object-cover" style="opacity:0.22; object-position:center top;">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/40"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
-    </div>
-
-    <div class="section-content w-full">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-xl">
-                <span class="section-label">Smart Living Ecosystem</span>
-                <h2 class="section-title" style="font-size:clamp(2.5rem,6vw,4.5rem);">
-                    ระบบที่<br>
-                    <span style="color:#f5a014;">ทำงานร่วมกัน</span>
-                </h2>
-                <p class="section-subtitle">
-                    เราไม่ได้ขายสินค้าเป็นชิ้น — เราสร้าง Smart Living Ecosystem
-                    ที่ทุกอุปกรณ์เชื่อมต่อและทำงานร่วมกันเป็นระบบเดียว
-                </p>
-
-                <div class="grid grid-cols-2 gap-x-8 gap-y-3 mt-6">
-                    @foreach([
-                        ['💡','ระบบแสงสว่าง'],
-                        ['❄️','ระบบปรับอากาศ'],
-                        ['🪟','ระบบม่านอัจฉริยะ'],
-                        ['🔐','ระบบรักษาความปลอดภัย'],
-                        ['📡','ระบบเซ็นเซอร์'],
-                        ['⚡','ระบบจัดการพลังงาน'],
-                        ['🏠','ระบบควบคุมบ้าน'],
-                        ['🔌','อุปกรณ์เสริม'],
-                    ] as $sys)
-                    <div class="flex items-center gap-3" style="color:rgba(255,255,255,0.6); font-size:0.85rem;">
-                        <span>{{ $sys[0] }}</span>
-                        <span>{{ $sys[1] }}</span>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- ===================================================
-     5. 8 PRODUCT CATEGORIES
-     =================================================== --}}
-<section class="reveal" id="systems" style="background:#0a0a0a; padding:6rem 2rem;">
+<section class="reveal" id="why" style="background:#0a0a0a; padding:6rem 2rem;">
     <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-            <span class="section-label">หมวดสินค้าตามการใช้งาน</span>
-            <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
-                ระบบครบ — เลือกได้ตามโปรเจกต์
-            </h2>
-        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(255,255,255,0.06);">
-
-            {{-- 01 ระบบแสงสว่าง --}}
-            <a href="{{ config('site.store_url') }}/collections/lighting" target="_blank" rel="noopener noreferrer"
-               class="group reveal" style="background:#0a0a0a; padding:2rem; display:block; transition:background 0.3s; position:relative; overflow:hidden;">
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <img src="{{ asset('images/projects/lighting-led.jpg') }}" alt="ระบบแสงสว่าง"
-                         class="w-full h-full object-cover" style="opacity:0.15;">
-                </div>
-                <div class="relative z-10">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:1rem;">01</div>
-                    <div style="width:36px; height:36px; margin-bottom:1rem; color:rgba(255,255,255,0.4);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 017 7c0 3.5-2.5 6.5-5.5 7.4V18a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1.6C7.5 15.5 5 12.5 5 9a7 7 0 017-7zM9 21h6M10 18h4"/></svg>
-                    </div>
-                    <h3 style="font-size:1rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">ระบบแสงสว่าง</h3>
-                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">สวิตช์ไฟ Dimmer และ LED Controller ที่ควบคุมได้ผ่านแอปและเสียง</p>
-                    <div class="mt-4" style="font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:#f5a014; opacity:0; group-hover:opacity-100 transition-opacity duration-300;">ดูสินค้า →</div>
-                </div>
-            </a>
-
-            {{-- 02 ระบบปรับอากาศ --}}
-            <a href="{{ config('site.store_url') }}/collections/ac-control" target="_blank" rel="noopener noreferrer"
-               class="group reveal" style="background:#0a0a0a; padding:2rem; display:block; transition:background 0.3s; position:relative; overflow:hidden;">
-                <div class="relative z-10">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:1rem;">02</div>
-                    <div style="width:36px; height:36px; margin-bottom:1rem; color:rgba(255,255,255,0.4);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/><circle cx="12" cy="12" r="3"/></svg>
-                    </div>
-                    <h3 style="font-size:1rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">ระบบควบคุมเครื่องปรับอากาศ</h3>
-                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">ควบคุมแอร์ทุกยี่ห้อผ่านสมาร์ทโฮม ตั้งเวลาและ Scene อัตโนมัติ</p>
-                </div>
-            </a>
-
-            {{-- 03 ระบบม่าน --}}
-            <a href="{{ config('site.store_url') }}/collections/curtain" target="_blank" rel="noopener noreferrer"
-               class="group reveal" style="background:#0a0a0a; padding:2rem; display:block; transition:background 0.3s; position:relative; overflow:hidden;">
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <img src="{{ asset('images/projects/curtain.jpg') }}" alt="ระบบม่านอัจฉริยะ"
-                         class="w-full h-full object-cover" style="opacity:0.15;">
-                </div>
-                <div class="relative z-10">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:1rem;">03</div>
-                    <div style="width:36px; height:36px; margin-bottom:1rem; color:rgba(255,255,255,0.4);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v2H3zM3 5v16M21 5v16M8 5v16M16 5v16"/></svg>
-                    </div>
-                    <h3 style="font-size:1rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">ระบบม่านอัจฉริยะ</h3>
-                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">มอเตอร์ม่านและรางม่านไฟฟ้า รองรับ WiFi และ Zigbee</p>
-                </div>
-            </a>
-
-            {{-- 04 ระบบรักษาความปลอดภัย --}}
-            <a href="{{ config('site.store_url') }}/collections/security" target="_blank" rel="noopener noreferrer"
-               class="group reveal" style="background:#0a0a0a; padding:2rem; display:block; transition:background 0.3s; position:relative; overflow:hidden;">
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <img src="{{ asset('images/projects/smart-lock.jpg') }}" alt="ระบบรักษาความปลอดภัย"
-                         class="w-full h-full object-cover" style="opacity:0.15;">
-                </div>
-                <div class="relative z-10">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:1rem;">04</div>
-                    <div style="width:36px; height:36px; margin-bottom:1rem; color:rgba(255,255,255,0.4);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg>
-                    </div>
-                    <h3 style="font-size:1rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">ระบบรักษาความปลอดภัย</h3>
-                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">Digital Door Lock, Video Doorbell, กล้อง CCTV เชื่อมต่อสมาร์ทโฮม</p>
-                </div>
-            </a>
-
-            {{-- 05 ระบบเซ็นเซอร์ --}}
-            <a href="{{ config('site.store_url') }}/collections/sensor" target="_blank" rel="noopener noreferrer"
-               class="group reveal" style="background:#0a0a0a; padding:2rem; display:block; transition:background 0.3s; position:relative; overflow:hidden;">
-                <div class="relative z-10">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:1rem;">05</div>
-                    <div style="width:36px; height:36px; margin-bottom:1rem; color:rgba(255,255,255,0.4);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M6.3 6.3a8 8 0 000 11.4M17.7 6.3a8 8 0 010 11.4M3.5 3.5a13 13 0 000 17M20.5 3.5a13 13 0 010 17"/></svg>
-                    </div>
-                    <h3 style="font-size:1rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">ระบบเซ็นเซอร์</h3>
-                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">PIR Motion, Door/Window, Temperature, Smoke Sensor เชื่อมระบบ Automation</p>
-                </div>
-            </a>
-
-            {{-- 06 ระบบพลังงาน --}}
-            <a href="{{ config('site.store_url') }}/collections/energy" target="_blank" rel="noopener noreferrer"
-               class="group reveal" style="background:#0a0a0a; padding:2rem; display:block; transition:background 0.3s; position:relative; overflow:hidden;">
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <img src="{{ asset('images/projects/switch-minimal.jpg') }}" alt="ระบบจัดการพลังงาน"
-                         class="w-full h-full object-cover" style="opacity:0.15;">
-                </div>
-                <div class="relative z-10">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:1rem;">06</div>
-                    <div style="width:36px; height:36px; margin-bottom:1rem; color:rgba(255,255,255,0.4);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                    </div>
-                    <h3 style="font-size:1rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">ระบบจัดการพลังงาน</h3>
-                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">Smart Plug, Power Monitor ติดตามและควบคุมการใช้ไฟในแต่ละจุด</p>
-                </div>
-            </a>
-
-            {{-- 07 ระบบควบคุมบ้าน --}}
-            <a href="{{ config('site.store_url') }}/collections/smart-panel" target="_blank" rel="noopener noreferrer"
-               class="group reveal" style="background:#0a0a0a; padding:2rem; display:block; transition:background 0.3s; position:relative; overflow:hidden;">
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <img src="{{ asset('images/projects/cabinet-panel.jpg') }}" alt="ระบบควบคุมบ้านอัจฉริยะ"
-                         class="w-full h-full object-cover" style="opacity:0.15;">
-                </div>
-                <div class="relative z-10">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:1rem;">07</div>
-                    <div style="width:36px; height:36px; margin-bottom:1rem; color:rgba(255,255,255,0.4);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                    </div>
-                    <h3 style="font-size:1rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">ระบบควบคุมบ้านอัจฉริยะ</h3>
-                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">Smart Panel, Wall Tablet, Scene Controller ศูนย์กลางควบคุมทุกระบบ</p>
-                </div>
-            </a>
-
-            {{-- 08 อุปกรณ์เสริม --}}
-            <a href="{{ config('site.store_url') }}/collections/accessories" target="_blank" rel="noopener noreferrer"
-               class="group reveal" style="background:#0a0a0a; padding:2rem; display:block; transition:background 0.3s; position:relative; overflow:hidden;">
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <img src="{{ asset('images/projects/switch-bedroom.jpg') }}" alt="อุปกรณ์เสริม"
-                         class="w-full h-full object-cover" style="opacity:0.15;">
-                </div>
-                <div class="relative z-10">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:1rem;">08</div>
-                    <div style="width:36px; height:36px; margin-bottom:1rem; color:rgba(255,255,255,0.4);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                    </div>
-                    <h3 style="font-size:1rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">อุปกรณ์ไฟฟ้าและอุปกรณ์เสริม</h3>
-                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">Gateway, Hub, สายไฟ และอุปกรณ์ประกอบระบบ Smart Home</p>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="text-center mt-10">
-            <a href="{{ config('site.store_url') }}" target="_blank" rel="noopener noreferrer" class="btn-outline">
-                ดูสินค้าทั้งหมดในร้าน
-            </a>
-        </div>
-    </div>
-</section>
-
-{{-- ===================================================
-     6. WHY CHOOSE US — Real project showcase
-     =================================================== --}}
-<section class="reveal" style="background:#050505; padding:6rem 2rem;">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            {{-- Photo collage --}}
+            {{-- Photo mosaic: หน้างานจริง --}}
             <div class="grid grid-cols-2 gap-2 reveal">
-                <img src="{{ asset('images/projects/hero-panel.jpg') }}" alt="Smart Living Project"
-                     class="w-full object-cover col-span-2" style="height:280px;">
-                <img src="{{ asset('images/projects/switch-minimal.jpg') }}" alt="Minimal Switch"
-                     class="w-full object-cover" style="height:180px; filter:brightness(0.85);">
-                <img src="{{ asset('images/projects/curtain.jpg') }}" alt="Smart Curtain"
-                     class="w-full object-cover" style="height:180px; filter:brightness(0.85);">
+                <img src="{{ asset('images/proof/team-install-doorbell.jpg') }}" alt="ทีมช่าง S.SMART กำลังติดตั้งหน้างานจริง"
+                     class="w-full object-cover col-span-2" style="height:300px; object-position:center 25%;">
+                <img src="{{ asset('images/proof/panel-thermostat-scene.jpg') }}" alt="Smart Panel และ Scene Switch ติดตั้งจริง"
+                     class="w-full object-cover" style="height:200px; filter:brightness(0.9);">
+                <img src="{{ asset('images/proof/switch-black-marble.jpg') }}" alt="สวิตช์ S.SMART ในบ้านจริง"
+                     class="w-full object-cover" style="height:200px; filter:brightness(0.9);">
             </div>
 
             <div>
                 <span class="section-label">ทำไมต้อง S.SMART</span>
                 <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.2; margin-bottom:2rem;">
                     มาตรฐานที่<br>
-                    <span style="color:#f5a014;">คัดสรรแล้ว</span>
+                    <span style="color:#c9a96e;">คัดสรรแล้ว</span>
                 </h2>
 
                 @foreach([
-                    ['โรงงานที่ได้รับการคัดเลือก','เราตรวจสอบโรงงานด้วยตนเอง คัดเฉพาะที่มีมาตรฐานการผลิตสม่ำเสมอ'],
-                    ['สินค้าตาม Spec ของ S.SMART','สินค้าหลายรายการ OEM ตาม Spec เพื่อให้เหมาะกับตลาดไทย'],
-                    ['Tuya Certified ทุกชิ้น','รองรับ Tuya Smart App เชื่อมต่อข้ามแบรนด์ได้ทันที'],
-                    ['รองรับการขยายระบบ','เริ่มจากสวิตช์ 1 ตัว ขยายเป็น Full Smart Home ในอนาคต'],
-                    ['ทีมสนับสนุนตัวแทน','มีเครื่องมือ ความรู้ และทีมพร้อมช่วยคุณปิดงาน'],
+                    ['ประสบการณ์จากโครงการจริง','เราออกแบบและติดตั้งระบบในบ้านทุกประเภท ตั้งแต่คอนโดจนถึงวิลล่า'],
+                    ['สินค้าคัดสรรคุณภาพสูง','เลือกผู้ผลิตที่มีมาตรฐาน และพัฒนาสินค้าหลายรายการภายใต้แบรนด์ S.SMART'],
+                    ['ระบบครบวงจร','เริ่มจากจุดเล็ก ๆ แล้วต่อยอดได้ทั้งระบบ โดยทุกอุปกรณ์ทำงานร่วมกัน'],
+                    ['Tuya Certified ทุกชิ้น','รองรับแอป Tuya Smart เชื่อมต่อข้ามแบรนด์ ควบคุมได้จากทุกที่'],
+                    ['ทีมสนับสนุนคนไทย','ให้คำปรึกษาการออกแบบระบบ ก่อนและหลังการขาย'],
                 ] as $i => $item)
                 <div class="flex gap-4 {{ $i < 4 ? 'mb-5' : '' }}">
-                    <div style="width:24px; height:24px; flex-shrink:0; margin-top:2px; color:#f5a014;">
+                    <div style="width:24px; height:24px; flex-shrink:0; margin-top:2px; color:#c9a96e;">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
                     <div>
@@ -575,59 +186,193 @@
                 @endforeach
             </div>
         </div>
+
+        {{-- Stat band เติมพื้นที่ให้บาลานซ์ --}}
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-px" style="background:rgba(255,255,255,0.06);">
+            @foreach([
+                ['10+','ปีประสบการณ์','ในธุรกิจ Smart Living'],
+                ['8','หมวดผลิตภัณฑ์','ครบทั้ง Ecosystem'],
+                ['100%','Tuya Certified','ชิปแท้ อัปเดต OTA ได้'],
+                ['1','แอปเดียว','ควบคุมได้ทั้งบ้าน'],
+            ] as $stat)
+            <div style="background:#0a0a0a; padding:2rem; text-align:center;">
+                <div style="font-size:2.2rem; font-weight:700; color:#c9a96e; font-family:'Nunito',sans-serif;">{{ $stat[0] }}</div>
+                <div style="font-size:0.85rem; font-weight:600; color:#fff; margin:4px 0 2px;">{{ $stat[1] }}</div>
+                <div style="font-size:0.7rem; color:rgba(255,255,255,0.3);">{{ $stat[2] }}</div>
+            </div>
+            @endforeach
+        </div>
     </div>
 </section>
 
 {{-- ===================================================
-     7. DEALER WELCOME CTA
+     6. CONNECTION DIAGRAM — การเชื่อมต่อของระบบ
+     TODO: หากได้ภาพ Diagram จริงจากพี่ ให้เปลี่ยนเป็น <img> แทน SVG นี้ได้
      =================================================== --}}
-<section class="section-full reveal" style="background:#0a0500;">
-    <div class="absolute inset-0 overflow-hidden">
-        <img src="{{ asset('images/projects/system-panel.jpg') }}" alt=""
-             class="w-full h-full object-cover" style="opacity:0.12; object-position:right center;" aria-hidden="true">
-        <div class="absolute inset-0 bg-gradient-to-r from-black to-black/60"></div>
-        <div class="absolute inset-0" style="background:radial-gradient(ellipse at 20% 50%, rgba(245,160,20,0.06) 0%, transparent 60%);"></div>
-    </div>
+<section class="reveal" id="ecosystem" style="background:#050505; padding:6rem 2rem; text-align:center;">
+    <div class="max-w-5xl mx-auto">
+        <span class="section-label">Smart Living Ecosystem</span>
+        <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin:0.75rem 0 1rem;">
+            ทุกอุปกรณ์ เชื่อมต่อเป็นระบบเดียว
+        </h2>
+        <p style="color:rgba(255,255,255,0.45); font-size:0.95rem; margin-bottom:3rem;">
+            สั่งงานทุกระบบผ่านแอปเดียว — WiFi, Zigbee และ Matter Ready
+        </p>
 
-    <div class="section-content w-full">
-        <div class="max-w-7xl mx-auto">
-            <span class="section-label" style="color:rgba(245,160,20,0.7);">Dealer Welcome</span>
-            <h2 class="section-title" style="font-size:clamp(2.5rem,5.5vw,4rem);">
-                พร้อมเริ่มต้น<br>
-                <span style="color:#f5a014;">ขายกับเราแล้วหรือยัง?</span>
-            </h2>
-            <p class="section-subtitle">
-                สมัครตัวแทนจำหน่ายวันนี้ — รับสิทธิ์เข้าถึงสินค้าราคาส่ง
-                เอกสารการขาย และทีมสนับสนุนพร้อมรับทุกโปรเจกต์
-            </p>
+        <div class="reveal">
+            <svg viewBox="0 0 800 480" class="w-full" style="max-width:800px; margin:0 auto;" role="img"
+                 aria-label="แผนภาพการเชื่อมต่อ: อุปกรณ์ทั้ง 8 ระบบเชื่อมต่อกับศูนย์กลาง S.SMART ควบคุมผ่านแอปเดียว">
+                @php
+                $nodes = [
+                    ['x'=>700,'y'=>240,'label'=>'สวิตช์ไฟ'],
+                    ['x'=>612,'y'=>368,'label'=>'แอร์'],
+                    ['x'=>400,'y'=>420,'label'=>'ม่านไฟฟ้า'],
+                    ['x'=>188,'y'=>368,'label'=>'Smart Lock'],
+                    ['x'=>100,'y'=>240,'label'=>'เซ็นเซอร์'],
+                    ['x'=>188,'y'=>112,'label'=>'พลังงาน'],
+                    ['x'=>400,'y'=>62,'label'=>'Smart Panel'],
+                    ['x'=>612,'y'=>112,'label'=>'ไฟ LED'],
+                ];
+                @endphp
 
-            {{-- 3 steps --}}
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 mb-10">
-                @foreach([
-                    ['01','ติดต่อเรา','โทรหรือ LINE เพื่อสมัครเป็นตัวแทน'],
-                    ['02','รับ Catalog','รับสินค้า Catalog + ราคาส่งทันที'],
-                    ['03','เริ่มขาย','เราพร้อมสนับสนุนทุกโปรเจกต์'],
-                ] as $step)
-                <div style="border-left:2px solid rgba(245,160,20,0.4); padding-left:1.5rem;">
-                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#f5a014; margin-bottom:0.5rem;">STEP {{ $step[0] }}</div>
-                    <div style="font-size:1.05rem; font-weight:600; color:#fff; margin-bottom:0.3rem;">{{ $step[1] }}</div>
-                    <div style="font-size:0.8rem; color:rgba(255,255,255,0.4);">{{ $step[2] }}</div>
-                </div>
+                {{-- Connection lines --}}
+                @foreach($nodes as $n)
+                <line x1="400" y1="240" x2="{{ $n['x'] }}" y2="{{ $n['y'] }}"
+                      stroke="rgba(201,169,110,0.25)" stroke-width="1" stroke-dasharray="4 4"/>
                 @endforeach
-            </div>
 
-            <div class="flex flex-wrap gap-4">
-                <a href="{{ route('dealer') }}" class="btn-gold">ดูรายละเอียดโปรแกรมตัวแทน</a>
-                <a href="https://line.me/ti/p/~{{ config('site.line_id') }}" target="_blank" rel="noopener noreferrer" class="btn-outline">
-                    LINE: {{ config('site.line_id') }}
-                </a>
+                {{-- Outer nodes --}}
+                @foreach($nodes as $i => $n)
+                <g>
+                    <circle cx="{{ $n['x'] }}" cy="{{ $n['y'] }}" r="30" fill="#111"
+                            stroke="rgba(201,169,110,0.45)" stroke-width="1"/>
+                    <text x="{{ $n['x'] }}" y="{{ $n['y'] + 5 }}" text-anchor="middle"
+                          fill="#c9a96e" font-size="13" font-weight="700" font-family="Nunito, sans-serif">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</text>
+                    <text x="{{ $n['x'] }}" y="{{ $n['y'] + 52 }}" text-anchor="middle"
+                          fill="rgba(255,255,255,0.65)" font-size="14" font-family="Inter, sans-serif">{{ $n['label'] }}</text>
+                </g>
+                @endforeach
+
+                {{-- Center hub --}}
+                <circle cx="400" cy="240" r="66" fill="#0a0a0a" stroke="#c9a96e" stroke-width="1.5"/>
+                <circle cx="400" cy="240" r="80" fill="none" stroke="rgba(201,169,110,0.2)" stroke-width="1"/>
+                <text x="400" y="232" text-anchor="middle" fill="#fff" font-size="17" font-weight="700" font-family="Inter, sans-serif">S.SMART</text>
+                <text x="400" y="254" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="12" font-family="Inter, sans-serif">ควบคุมผ่านแอปเดียว</text>
+            </svg>
+
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                @foreach(['WiFi 2.4GHz','Zigbee 3.0','Matter Ready','Tuya Certified'] as $proto)
+                <span style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.12); padding:6px 18px; border-radius:100px;">
+                    {{ $proto }}
+                </span>
+                @endforeach
             </div>
         </div>
     </div>
 </section>
 
 {{-- ===================================================
-     8. CONTACT
+     7. CUSTOMER SEGMENTS — กลุ่มลูกค้า
+     =================================================== --}}
+<section class="reveal" id="customers" style="background:#0a0a0a; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-12">
+            <span class="section-label">เหมาะสำหรับ</span>
+            <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">กลุ่มลูกค้า</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
+            @foreach([
+                ['⌂','บ้านเดี่ยว'],
+                ['▤','คอนโด'],
+                ['◈','วิลล่า'],
+                ['◉','โรงแรม'],
+                ['◎','ร้านอาหาร'],
+                ['▦','สำนักงาน'],
+                ['◇','โครงการอสังหาฯ'],
+            ] as $s)
+            <div class="reveal border border-white/5 p-5 text-center hover:border-[#c9a96e]/30 transition-all duration-300" style="transition-delay:{{ $loop->index * 60 }}ms;">
+                <div style="font-size:2rem; color:#c9a96e; margin-bottom:0.75rem;">{{ $s[0] }}</div>
+                <div style="color:rgba(255,255,255,0.7); font-size:0.8rem; line-height:1.4;">{{ $s[1] }}</div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     8. PORTFOLIO — ผลงานติดตั้งจริง
+     =================================================== --}}
+<section class="reveal" id="portfolio" style="background:#050505; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-12">
+            <span class="section-label">ผลงานของเรา</span>
+            <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
+                ผลงานติดตั้งจริง
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+            @foreach([
+                ['images/proof/panel-hall-wide.jpg','Smart Panel + Scene Control','บ้านเดี่ยว'],
+                ['images/proof/doorbell-teak-door.jpg','Video Doorbell + Smart Lock','บ้านเดี่ยว'],
+                ['images/proof/curtain-sheer-city.jpg','ม่านไฟฟ้า 2 ชั้น','คอนโดมิเนียม'],
+                ['images/proof/panel-thermostat-scene.jpg','ศูนย์ควบคุมรวม + Thermostat','วิลล่า'],
+                ['images/proof/switch-wallpaper.jpg','สวิตช์อัจฉริยะทั้งหลัง','โรงแรม'],
+                ['images/proof/lighting-led-wardrobe.jpg','ระบบไฟ LED บิวท์อิน','งาน Interior'],
+            ] as $work)
+            <div class="group reveal relative overflow-hidden" style="aspect-ratio:4/3; transition-delay:{{ $loop->index * 60 }}ms;">
+                <img src="{{ asset($work[0]) }}" alt="{{ $work[1] }} — {{ $work[2] }}"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                     style="filter:brightness(0.8);">
+                <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 45%);"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <div style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:#c9a96e; margin-bottom:3px;">{{ $work[2] }}</div>
+                    <div style="font-size:0.9rem; font-weight:600; color:#fff;">{{ $work[1] }}</div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <p style="color:rgba(255,255,255,0.25); font-size:0.8rem; text-align:center; margin-top:2rem; letter-spacing:0.05em;">
+            ผลงานทั้งหมดติดตั้งจริงโดยทีมงาน S.SMART — วิดีโอผลงานกำลังจะตามมาเร็ว ๆ นี้
+        </p>
+    </div>
+</section>
+
+{{-- ===================================================
+     9. DEALER CTA
+     =================================================== --}}
+<section class="reveal" style="background:#0a0500; padding:6rem 2rem; position:relative; overflow:hidden;">
+    <div class="absolute inset-0" style="background:radial-gradient(ellipse at 20% 50%, rgba(201,169,110,0.07) 0%, transparent 60%);"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="section-label" style="color:rgba(201,169,110,0.7);">Dealer Program</span>
+                <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.15; margin:0.75rem 0 1rem;">
+                    สร้างธุรกิจ Smart Living<br>
+                    <span style="color:#c9a96e;">ไปพร้อมกับเรา</span>
+                </h2>
+                <p style="color:rgba(255,255,255,0.5); font-size:0.95rem; line-height:1.8; margin-bottom:2rem;">
+                    สินค้าครบวงจร ระบบสนับสนุนพร้อม เริ่มต้นได้ทันที —
+                    เราไม่ได้มองหาผู้ซื้อสินค้า แต่มองหาพันธมิตรระยะยาว
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="{{ route('dealer') }}" class="btn-gold">ดูโปรแกรมตัวแทนจำหน่าย</a>
+                    <a href="https://line.me/ti/p/~{{ config('site.line_id') }}" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                        LINE: {{ config('site.line_id') }}
+                    </a>
+                </div>
+            </div>
+            <div class="reveal hidden lg:block">
+                <img src="{{ asset('images/proof/panel-hall-cabinet.jpg') }}" alt="ระบบ Smart Living ติดตั้งจริงโดยตัวแทน S.SMART"
+                     class="w-full object-cover" style="height:380px; filter:brightness(0.85);">
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     10. CONTACT
      =================================================== --}}
 <section class="reveal" id="contact" style="background:#080808; padding:6rem 2rem;">
     <div class="max-w-7xl mx-auto">
@@ -636,31 +381,32 @@
                 <span class="section-label">ติดต่อเรา</span>
                 <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.1; margin-bottom:2rem;">
                     พูดคุยกับทีมงาน<br>
-                    <span style="color:#f5a014;">ได้เลยตอนนี้</span>
+                    <span style="color:#c9a96e;">ได้เลยตอนนี้</span>
                 </h2>
                 <p style="color:rgba(255,255,255,0.45); font-size:0.95rem; line-height:1.85; margin-bottom:2.5rem;">
-                    ทีมงาน S.SMART พร้อมให้คำปรึกษาเรื่องสินค้า ราคาตัวแทน และโซลูชันที่เหมาะกับโปรเจกต์ของคุณ
+                    ทีมงาน S.SMART พร้อมให้คำปรึกษาเรื่องการออกแบบระบบ สินค้า
+                    และโซลูชันที่เหมาะกับบ้านหรือโปรเจกต์ของคุณ
                 </p>
 
                 <div class="space-y-5">
                     <div class="flex gap-4">
-                        <div style="width:40px; height:40px; border:1px solid rgba(245,160,20,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#f5a014; font-size:0.65rem; letter-spacing:0.1em;">TEL</div>
+                        <div style="width:40px; height:40px; border:1px solid rgba(201,169,110,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#c9a96e; font-size:0.65rem; letter-spacing:0.1em;">TEL</div>
                         <div>
                             <a href="tel:{{ config('site.phone_1') }}" class="block" style="color:#fff; font-size:0.95rem; text-decoration:none; margin-bottom:2px;">09 8295 5259</a>
                             <a href="tel:{{ config('site.phone_2') }}" class="block" style="color:rgba(255,255,255,0.5); font-size:0.95rem; text-decoration:none;">09 2955 5455</a>
                         </div>
                     </div>
                     <div class="flex gap-4">
-                        <div style="width:40px; height:40px; border:1px solid rgba(245,160,20,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#f5a014; font-size:0.65rem; letter-spacing:0.1em;">LINE</div>
+                        <div style="width:40px; height:40px; border:1px solid rgba(201,169,110,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#c9a96e; font-size:0.65rem; letter-spacing:0.1em;">LINE</div>
                         <a href="https://line.me/ti/p/~{{ config('site.line_id') }}" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.7); font-size:0.95rem; text-decoration:none; align-self:center;">{{ config('site.line_id') }}</a>
                     </div>
                     <div class="flex gap-4">
-                        <div style="width:40px; height:40px; border:1px solid rgba(245,160,20,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#f5a014; font-size:0.65rem; letter-spacing:0.1em;">FB</div>
+                        <div style="width:40px; height:40px; border:1px solid rgba(201,169,110,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#c9a96e; font-size:0.65rem; letter-spacing:0.1em;">FB</div>
                         <a href="https://facebook.com/{{ config('site.facebook') }}" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.7); font-size:0.95rem; text-decoration:none; align-self:center;">ssmartautomation</a>
                     </div>
                     <div class="flex gap-4">
-                        <div style="width:40px; height:40px; border:1px solid rgba(245,160,20,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#f5a014; font-size:0.65rem; letter-spacing:0.1em;">EMAIL</div>
-                        <a href="mailto:ssmartautomationsystems@gmail.com" style="color:rgba(255,255,255,0.7); font-size:0.9rem; text-decoration:none; align-self:center; word-break:break-all;">ssmartautomationsystems@gmail.com</a>
+                        <div style="width:40px; height:40px; border:1px solid rgba(201,169,110,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#c9a96e; font-size:0.65rem; letter-spacing:0.1em;">EMAIL</div>
+                        <a href="mailto:{{ config('site.email') }}" style="color:rgba(255,255,255,0.7); font-size:0.9rem; text-decoration:none; align-self:center; word-break:break-all;">{{ config('site.email') }}</a>
                     </div>
                 </div>
             </div>
@@ -679,7 +425,7 @@
                         <h3 style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:1rem;">ช่องทางออนไลน์</h3>
                         <div class="flex flex-col gap-2">
                             <a href="{{ config('site.store_url') }}" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5); font-size:0.85rem; text-decoration:none;">🌐 www.ssmartluxuryswitch.com</a>
-                            <a href="https://youtube.com/channel/UCNZGpnqsaLQeGbzUVyn7Yrg?sub_confirmation=1" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5); font-size:0.85rem; text-decoration:none;">▶ YouTube Channel</a>
+                            <a href="https://youtube.com/channel/{{ config('site.youtube') }}?sub_confirmation=1" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5); font-size:0.85rem; text-decoration:none;">▶ YouTube Channel</a>
                             <a href="https://instagram.com/{{ config('site.instagram') }}" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5); font-size:0.85rem; text-decoration:none;">📷 @{{ config('site.instagram') }}</a>
                         </div>
                     </div>

@@ -1,253 +1,373 @@
 @extends('layouts.app')
 
-@section('title', 'S.SMART — ร่วมเป็นตัวแทนจำหน่าย | Dealer Program')
+@section('title', 'S.SMART — ร่วมเป็นตัวแทนจำหน่าย | สร้างธุรกิจ Smart Living ไปพร้อมกับเรา')
 
 @section('content')
 
-{{-- ========== HERO ========== --}}
+{{-- ===================================================
+     SECTION 1 : HERO — Business Partnership
+     TODO: เมื่อได้ภาพ "ทีมงานประชุมกับผู้รับเหมา / สถาปนิกดูแบบบ้าน"
+           ให้เปลี่ยน src เป็นภาพนั้น (ตอนนี้ใช้ภาพระบบติดตั้งจริงไปก่อน)
+     =================================================== --}}
 <section class="section-full" style="background:#030303;">
     <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-[#0a0d00] via-black to-black"></div>
-        <div class="absolute inset-0" style="background:radial-gradient(ellipse 70% 60% at 70% 40%, rgba(201,169,110,0.06) 0%, transparent 70%);"></div>
-        <div class="absolute inset-0" style="background-image:linear-gradient(rgba(201,169,110,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,110,0.03) 1px,transparent 1px);background-size:100px 100px;"></div>
+        <img src="{{ asset('images/proof/panel-hall-wide.jpg') }}" alt="ระบบ Smart Living ที่ตัวแทน S.SMART จำหน่ายและติดตั้ง"
+             class="w-full h-full object-cover" style="opacity:0.3; object-position:center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
     </div>
-    <div class="section-overlay" style="background:linear-gradient(to top,#000 0%,rgba(0,0,0,.45) 55%,transparent 100%);"></div>
 
-    <div class="section-content">
-        <p class="section-label reveal">Dealer Program</p>
-        <h1 class="section-title reveal" style="font-size:clamp(3rem,8vw,6.5rem);">
-            ร่วมเป็น<br>
-            <span class="gradient-gold">ตัวแทน</span><br>
-            S.SMART
-        </h1>
-        <p class="section-subtitle reveal">
-            สร้างธุรกิจ Smart Home ไปพร้อมกับเรา<br>
-            สินค้าครบ ทีม Support พร้อม เริ่มได้ทันที
-        </p>
-        <div class="flex flex-wrap gap-4 reveal">
-            <a href="#apply" class="btn-gold">สมัครเป็นตัวแทน</a>
-            <a href="#benefits" class="btn-outline">ดูสิทธิประโยชน์</a>
+    <div class="section-content w-full">
+        <div class="max-w-7xl mx-auto">
+            <p class="section-label reveal" style="color:rgba(201,169,110,0.85);">Business Partnership</p>
+            <h1 class="reveal" style="font-size:clamp(2.6rem,6.5vw,5rem); font-weight:700; letter-spacing:-0.03em; line-height:1.1; color:#fff; margin-bottom:1.25rem;">
+                ร่วมเป็นตัวแทนจำหน่าย<br>
+                <span class="gradient-gold">S.SMART</span>
+            </h1>
+            <p class="reveal" style="font-size:1.05rem; color:rgba(255,255,255,0.6); max-width:32rem; line-height:1.8; margin-bottom:2.5rem;">
+                สร้างธุรกิจ Smart Living ไปพร้อมกับเรา<br>
+                สินค้าครบวงจร ระบบสนับสนุนพร้อม เริ่มต้นได้ทันที
+            </p>
+            <div class="flex flex-wrap gap-4 reveal">
+                <a href="#apply" class="btn-gold">สมัครเป็นตัวแทน</a>
+                <a href="#benefits" class="btn-outline">ดูสิทธิประโยชน์</a>
+            </div>
         </div>
     </div>
 
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="opacity:.35;">
-        <div style="width:1px;height:48px;background:linear-gradient(to bottom,#fff,transparent);animation:pulse 2s infinite;"></div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="opacity:0.35;">
+        <span class="text-xs tracking-widest uppercase text-white">Scroll</span>
+        <div class="w-px h-12 bg-gradient-to-b from-white to-transparent animate-pulse"></div>
     </div>
 </section>
 
-{{-- ========== WHY S.SMART ========== --}}
-<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#0a0a0a]" id="why">
+{{-- ===================================================
+     SECTION 2 : ทำไมต้องเลือก S.SMART — 5 Cards พร้อมภาพจริง
+     =================================================== --}}
+<section class="reveal" id="why" style="background:#0a0a0a; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-14 text-center">
+            <span class="section-label">เหตุผลที่ควรร่วมงานกับเรา</span>
+            <h2 style="font-size:clamp(2rem,4.5vw,3.2rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
+                ทำไมต้องเลือก <span class="gradient-gold">S.SMART</span>
+            </h2>
+        </div>
+
+        @php
+        $whyCards = [
+            ['ประสบการณ์ในธุรกิจ Smart Living','เรามีประสบการณ์จากโครงการจริง และเข้าใจการใช้งานในบ้านทุกประเภท','images/proof/team-install-doorbell.jpg','ทีมงานหน้างานจริง'],
+            ['สินค้าคัดสรรคุณภาพสูง','เราเลือกผู้ผลิตที่มีมาตรฐาน และพัฒนาสินค้าหลายรายการภายใต้แบรนด์ S.SMART','images/proof/dimmer-white-glass.jpg','สินค้าแบรนด์ S.SMART'],
+            ['ระบบครบวงจร','ลูกค้าสามารถเริ่มจากจุดเล็ก ๆ และต่อยอดได้ทั้งระบบ','images/proof/panel-thermostat-scene.jpg','ระบบที่ทำงานร่วมกัน'],
+            ['ทีมสนับสนุน','ช่วยเลือกสินค้า ออกแบบระบบ และให้คำปรึกษาก่อนและหลังการขาย','images/proof/control-panel-hall.jpg','ออกแบบระบบให้ทุกโปรเจกต์'],
+            ['เติบโตไปด้วยกัน','เราไม่ได้มองหาผู้ซื้อสินค้า แต่มองหาพันธมิตรระยะยาว','images/proof/panel-hall-cabinet.jpg','พันธมิตรระยะยาว'],
+        ];
+        @endphp
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px" style="background:rgba(255,255,255,0.06);">
+            @foreach($whyCards as $i => $card)
+            <div class="reveal group" style="background:#0a0a0a; transition-delay:{{ $i * 70 }}ms;">
+                <div style="aspect-ratio:4/3; overflow:hidden; position:relative;">
+                    <img src="{{ asset($card[2]) }}" alt="{{ $card[3] }}"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                         style="opacity:0.6;">
+                    <div class="absolute bottom-2 left-3" style="font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.5);">{{ $card[3] }}</div>
+                </div>
+                <div style="padding:1.5rem 1.25rem;">
+                    <div style="font-size:0.6rem; letter-spacing:0.3em; color:#c9a96e; margin-bottom:0.6rem;">{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}</div>
+                    <h3 style="font-size:0.92rem; font-weight:600; color:#fff; margin-bottom:0.5rem; line-height:1.4;">{{ $card[0] }}</h3>
+                    <p style="font-size:0.78rem; color:rgba(255,255,255,0.4); line-height:1.65;">{{ $card[1] }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     PROOF STRIP — ผลงานจริง สร้างความน่าเชื่อถือ
+     =================================================== --}}
+<section class="reveal" style="background:#000; padding:3rem 0;">
+    <p style="text-align:center; font-size:0.65rem; letter-spacing:0.35em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:1.5rem;">
+        ผลงานติดตั้งจริงโดยทีมงานและตัวแทน S.SMART
+    </p>
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-1 px-1">
+        @foreach([
+            ['images/proof/doorbell-teak-door.jpg','Video Doorbell หน้าบ้านจริง'],
+            ['images/proof/switch-black-marble.jpg','สวิตช์ในห้องนั่งเล่น'],
+            ['images/proof/panel-scene-6key.jpg','Scene Panel งาน Interior'],
+            ['images/proof/curtain-sheer-city.jpg','ม่านไฟฟ้าในคอนโด'],
+            ['images/proof/switch-wallpaper.jpg','สวิตช์งานโรงแรม'],
+            ['images/proof/lighting-led-wardrobe.jpg','ไฟ LED บิวท์อิน'],
+        ] as $p)
+        <div style="aspect-ratio:1/1; overflow:hidden;">
+            <img src="{{ asset($p[0]) }}" alt="{{ $p[1] }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" style="filter:brightness(0.8);">
+        </div>
+        @endforeach
+    </div>
+</section>
+
+{{-- ===================================================
+     SECTION 3 : โปรแกรมนี้เหมาะกับใคร — 6 การ์ด
+     TODO: รอภาพจริงของแต่ละกลุ่ม + ข้อความ Final จากพี่ (ตอนนี้เป็น Draft)
+     =================================================== --}}
+<section class="reveal" id="who" style="background:#050505; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-14">
+            <span class="section-label">เหมาะกับใคร</span>
+            <h2 style="font-size:clamp(2rem,4.5vw,3.2rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
+                โปรแกรมนี้เหมาะกับใคร
+            </h2>
+        </div>
+
+        @php
+        $audiences = [
+            ['เจ้าของกิจการรับเหมา','เพิ่มมูลค่างานรับเหมาด้วยแพ็กเกจ Smart Living ที่มีทีมช่วยออกแบบและสนับสนุนการติดตั้ง'],
+            ['สถาปนิก','มีทีมช่วยวางระบบตั้งแต่ขั้นตอนออกแบบ พร้อม Spec และ Wiring Diagram สำหรับงานเขียนแบบ'],
+            ['Interior Designer','สวิตช์และอุปกรณ์ดีไซน์พรีเมียม 4 เฉดสี เข้ากับงานตกแต่งได้ทุกสไตล์'],
+            ['บริษัทระบบไฟฟ้า','ต่อยอดงานระบบไฟฟ้าเดิมสู่งาน Smart Home ด้วยสินค้าครบทั้ง 8 หมวด'],
+            ['ผู้รับเหมาตกแต่ง','เพิ่มบริการใหม่ให้ลูกค้าเดิม โดยมีทีมเทคนิคของ S.SMART สนับสนุนทุกขั้นตอน'],
+            ['ร้านวัสดุก่อสร้าง','เพิ่มไลน์สินค้า Smart Home ที่ Margin ดี พร้อมสื่อการขายและการอบรมจากบริษัท'],
+        ];
+        @endphp
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            @foreach($audiences as $i => $a)
+            <div class="reveal border border-white/5 hover:border-[#c9a96e]/30 transition-all duration-300 overflow-hidden" style="background:#0a0a0a; transition-delay:{{ $i * 60 }}ms;">
+                {{-- Placeholder ภาพจริงของแต่ละกลุ่ม (รอพี่ส่ง) --}}
+                <div style="aspect-ratio:16/7; background:linear-gradient(135deg, rgba(201,169,110,0.08), rgba(0,0,0,0)); display:flex; align-items:center; justify-content:center; border-bottom:1px solid rgba(255,255,255,0.04);">
+                    <span style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(201,169,110,0.35);">ภาพจริงกำลังจัดเตรียม</span>
+                </div>
+                <div style="padding:1.5rem;">
+                    <h3 style="color:#fff; font-weight:600; font-size:0.95rem; margin-bottom:0.5rem;">{{ $a[0] }}</h3>
+                    <p style="color:rgba(255,255,255,0.4); font-size:0.8rem; line-height:1.7;">{{ $a[1] }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     SECTION 4 : สิทธิประโยชน์ของตัวแทน — 8 กล่อง
+     =================================================== --}}
+<section class="reveal" id="benefits" style="background:#0a0a0a; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-14">
+            <span class="section-label">สิ่งที่ได้รับ</span>
+            <h2 style="font-size:clamp(2rem,4.5vw,3.2rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
+                สิทธิประโยชน์ของตัวแทน
+            </h2>
+        </div>
+
+        @php
+        $benefits = [
+            ['สิทธิ์ซื้อราคาตัวแทน','Margin ดี แข่งขันได้ในตลาด'],
+            ['สื่อการตลาดของบริษัท','ใช้ภาพสินค้า HD วิดีโอ และ Brochure ได้ทันที'],
+            ['รับการอบรมออนไลน์','คอร์ส 101 Home Automation ฟรี พร้อม Certificate'],
+            ['ปรึกษาการออกแบบระบบ','ทีมช่วยออกแบบระบบและ Wiring Diagram ให้ทุกโปรเจกต์'],
+            ['สนับสนุนด้านเทคนิค','ทีม Support คนไทย ช่วยแก้ปัญหาหน้างาน'],
+            ['อัปเดตสินค้าใหม่','รับข้อมูลสินค้าใหม่ก่อนใคร'],
+            ['เข้าร่วม Partner Academy','พัฒนาความรู้และทักษะการขายอย่างต่อเนื่อง'],
+            ['โอกาสรับงานจากบริษัท','ส่งต่องานในพื้นที่ให้ตัวแทน (ในอนาคต)'],
+        ];
+        @endphp
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(255,255,255,0.06);">
+            @foreach($benefits as $i => $b)
+            <div class="reveal" style="background:#0a0a0a; padding:1.75rem; transition-delay:{{ $i * 50 }}ms;">
+                <div style="font-size:0.6rem; letter-spacing:0.3em; color:#c9a96e; margin-bottom:0.75rem;">{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}</div>
+                <h3 style="color:#fff; font-weight:600; font-size:0.9rem; margin-bottom:0.5rem;">{{ $b[0] }}</h3>
+                <p style="color:rgba(255,255,255,0.4); font-size:0.78rem; line-height:1.65;">{{ $b[1] }}</p>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     SECTION 5 : 8 หมวดผลิตภัณฑ์ — Cross Sell
+     =================================================== --}}
+<section class="reveal" style="background:#050505; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-14 text-center">
+            <span class="section-label">โอกาสทางธุรกิจ</span>
+            <h2 style="font-size:clamp(2rem,4.5vw,3.2rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
+                ขายได้ทั้งระบบ <span class="gradient-gold">ไม่จำกัดเพียงสินค้าเดียว</span>
+            </h2>
+            <p style="color:rgba(255,255,255,0.4); font-size:0.9rem; margin-top:0.75rem;">
+                ลูกค้าเริ่มจากสวิตช์ 1 ตัว — ตัวแทนต่อยอดขายได้ครบทั้ง 8 หมวด
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            @foreach($categories as $slug => $cat)
+            <a href="{{ route('category', $slug) }}"
+               class="reveal block border border-white/5 p-5 text-center hover:border-[#c9a96e]/40 transition-all duration-300"
+               style="transition-delay:{{ $loop->index * 50 }}ms;">
+                <div style="font-size:0.6rem; letter-spacing:0.25em; color:#c9a96e; margin-bottom:0.6rem;">{{ $cat['no'] }}</div>
+                <div style="color:rgba(255,255,255,0.75); font-size:0.82rem; font-weight:600; line-height:1.4;">{{ $cat['name'] }}</div>
+            </a>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     SECTION 6 : ขั้นตอนการเป็นตัวแทน — Timeline แนวนอน
+     =================================================== --}}
+<section class="reveal" style="background:#0a0a0a; padding:6rem 2rem;">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-14 text-center">
+            <span class="section-label">เริ่มต้นง่าย</span>
+            <h2 style="font-size:clamp(2rem,4.5vw,3.2rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
+                ขั้นตอนการเป็นตัวแทน
+            </h2>
+        </div>
+
+        @php
+        $steps = ['สมัคร','พูดคุยกับทีมงาน','Welcome Kit','อบรมออนไลน์','ทดลองใช้งาน Starter Kit','เริ่มขาย','ทีมงานสนับสนุน'];
+        @endphp
+
+        {{-- Desktop: horizontal timeline --}}
+        <div class="hidden lg:block relative">
+            <div class="absolute top-6 left-0 right-0 h-px" style="background:linear-gradient(to right, transparent, rgba(201,169,110,0.4) 8%, rgba(201,169,110,0.4) 92%, transparent);"></div>
+            <div class="grid grid-cols-7 gap-2 relative">
+                @foreach($steps as $i => $step)
+                <div class="reveal text-center" style="transition-delay:{{ $i * 90 }}ms;">
+                    <div style="width:3rem; height:3rem; margin:0 auto 1rem; border:1px solid rgba(201,169,110,0.5); border-radius:50%; background:#0a0a0a; display:flex; align-items:center; justify-content:center; position:relative; z-index:1;">
+                        <span style="color:#c9a96e; font-size:0.75rem; font-weight:700; font-family:'Nunito',sans-serif;">{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}</span>
+                    </div>
+                    <div style="color:#fff; font-size:0.82rem; font-weight:600; line-height:1.4;">{{ $step }}</div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- Mobile: vertical timeline --}}
+        <div class="lg:hidden relative">
+            <div class="absolute left-6 top-0 bottom-0 w-px" style="background:rgba(201,169,110,0.25);"></div>
+            <div class="space-y-6">
+                @foreach($steps as $i => $step)
+                <div class="reveal flex gap-5 items-center" style="transition-delay:{{ $i * 70 }}ms;">
+                    <div style="width:3rem; height:3rem; flex-shrink:0; border:1px solid rgba(201,169,110,0.5); border-radius:50%; background:#0a0a0a; display:flex; align-items:center; justify-content:center; position:relative; z-index:1;">
+                        <span style="color:#c9a96e; font-size:0.75rem; font-weight:700;">{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}</span>
+                    </div>
+                    <div style="color:#fff; font-size:0.9rem; font-weight:600;">{{ $step }}</div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     SECTION 7 : FAQ — Accordion
+     =================================================== --}}
+<section class="reveal" style="background:#050505; padding:6rem 2rem;">
+    <div class="max-w-3xl mx-auto">
+        <div class="mb-14">
+            <span class="section-label">FAQ</span>
+            <h2 style="font-size:clamp(2rem,4.5vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin-top:0.75rem;">
+                คำถามที่พบบ่อย
+            </h2>
+        </div>
+
+        @php
+        $faqs = [
+            ['ต้องสต็อกสินค้าหรือไม่?','ไม่บังคับ สามารถสั่งตามออเดอร์ลูกค้าได้ ทีมงานจะแจ้ง Lead Time ให้ทราบล่วงหน้า'],
+            ['มีค่าใช้จ่ายในการสมัครหรือไม่?','ไม่มีค่าใช้จ่ายในการสมัครเป็นตัวแทนจำหน่าย พูดคุยกับทีมงานได้ฟรี'],
+            ['ต้องอบรมก่อนขายหรือไม่?','แนะนำให้เรียนคอร์สออนไลน์ "101 Home Automation" ฟรีก่อนเริ่มขาย เพื่อให้แนะนำลูกค้าได้อย่างมั่นใจ'],
+            ['บริษัทช่วยออกแบบระบบไหม?','ช่วยครับ ทีม Technical Support ช่วยออกแบบระบบ ทำ Wiring Diagram และแนะนำสินค้าที่เหมาะกับแต่ละโปรเจกต์'],
+            ['มีบริการหลังการขายหรือไม่?','มีครับ สินค้ามีการรับประกัน พร้อมทีม Support คนไทยช่วยแก้ปัญหาทั้งตัวแทนและลูกค้าปลายทาง'],
+        ];
+        @endphp
+
+        <div class="space-y-3">
+            @foreach($faqs as $i => $faq)
+            <div class="reveal faq-item border border-white/8 overflow-hidden" style="transition-delay:{{ $i * 70 }}ms;">
+                <button class="faq-toggle w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
+                    <span style="color:#fff; font-size:0.9rem; font-weight:500;">{{ $faq[0] }}</span>
+                    <span class="faq-icon" style="color:#c9a96e; font-size:1.2rem; flex-shrink:0; transition:transform .3s;">+</span>
+                </button>
+                <div class="faq-answer" style="max-height:0; overflow:hidden; transition:max-height .3s ease;">
+                    <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; line-height:1.7; padding:0 1.25rem 1.25rem;">{{ $faq[1] }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===================================================
+     SECTION 8 : ONBOARDING — สัปดาห์แรกหลังสมัคร
+     TODO: รอภาพ Welcome Kit จริงจากพี่ (ตอนนี้เป็นกล่อง Placeholder)
+     =================================================== --}}
+<section class="reveal" style="background:#0a0a0a; padding:6rem 2rem;">
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <p class="section-label reveal">เหตุผลที่ควรเลือก</p>
-                <h2 class="reveal" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-bottom:1.5rem;line-height:1.15;">
-                    ทำไมต้องเลือก<br>
-                    <span class="gradient-gold">S.SMART?</span>
+                <span class="section-label">Onboarding System</span>
+                <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.2; margin:0.75rem 0 1rem;">
+                    สิ่งที่คุณจะได้รับ<br>
+                    <span style="color:#c9a96e;">ในสัปดาห์แรกหลังสมัคร</span>
                 </h2>
-                <div class="line-gold mb-8 reveal"></div>
-                <p class="reveal" style="color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:2rem;">
-                    เราไม่ได้มอบแค่สินค้า แต่มอบ <strong style="color:#c9a96e;">ระบบธุรกิจ</strong> ที่ช่วยให้ตัวแทนทุกคนขายได้จริง มีรายได้จริง และเติบโตไปพร้อมกัน
+                <p style="color:rgba(255,255,255,0.45); font-size:0.9rem; line-height:1.8; margin-bottom:2rem;">
+                    สมัครแล้วไม่ได้ถูกปล่อยให้ขายเอง — เรามีระบบ Onboarding
+                    รองรับตัวแทนใหม่ทุกคนตั้งแต่วันแรก
                 </p>
-                <a href="#apply" class="btn-gold reveal">เริ่มต้นวันนี้ →</a>
-            </div>
-            <div class="space-y-3 reveal">
-                @php
-                $reasons = [
-                    'สินค้าครบทั้งระบบ ไม่ต้องหาจากหลายที่',
-                    'คุณภาพระดับพรีเมียม AG Glass + Genuine Tuya',
-                    'ใช้งานง่าย ลูกค้าซื้อแล้วไม่โทรมาถาม',
-                    'แอปฟรี ไม่มีค่าสมัครรายเดือนให้ลูกค้ากังวล',
-                    'ทีม Support คนไทย ตอบเร็ว ตอบจริง',
-                ];
-                @endphp
-                @foreach($reasons as $i => $r)
-                <div class="flex gap-4 p-4 border border-white/5 hover:border-[#c9a96e]/30 transition-all duration-300" style="transition-delay:{{ $i * 80 }}ms;">
-                    <span style="color:#c9a96e;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}</span>
-                    <span style="color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.5;">{{ $r }}</span>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
 
-{{-- ========== WHO IS IT FOR ========== --}}
-<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#050505]" id="who">
-    <div class="max-w-7xl mx-auto">
-        <div class="mb-16 reveal">
-            <p class="section-label">เหมาะกับ</p>
-            <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-bottom:.75rem;">โปรแกรมนี้เหมาะกับใคร?</h2>
-            <div class="line-gold"></div>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            @php
-            $audiences = [
-                ['icon'=>'⚡','title'=>'ช่างไฟฟ้า','desc'=>'ต่อยอดรายได้จากงานไฟฟ้าสู่งาน Smart Home'],
-                ['icon'=>'⌂','title'=>'ผู้รับเหมา','desc'=>'เพิ่มมูลค่าโปรเจกต์ด้วย Smart Home Package'],
-                ['icon'=>'◈','title'=>'อินทีเรียร์','desc'=>'แนะนำสวิตช์หรูที่เข้ากับงานออกแบบ'],
-                ['icon'=>'◎','title'=>'ร้านอุปกรณ์ไฟฟ้า','desc'=>'ขยายสินค้า Smart Home ในร้านที่มีอยู่'],
-                ['icon'=>'◉','title'=>'บริษัทรักษาความปลอดภัย','desc'=>'รวมระบบ CCTV + Smart Lock + Sensor'],
-                ['icon'=>'◇','title'=>'บริษัท Smart Home','desc'=>'เพิ่มแบรนด์สินค้าคุณภาพสูงในพอร์ต'],
-                ['icon'=>'▦','title'=>'Freelancer','desc'=>'รายได้ค่าคอมมิสชัน + ค่าติดตั้ง'],
-                ['icon'=>'⬡','title'=>'เจ้าของธุรกิจทั่วไป','desc'=>'ธุรกิจ Side-Income รายได้ดี Margin สูง'],
-            ];
-            @endphp
-            @foreach($audiences as $a)
-            <div class="reveal bg-[#0a0a0a] border border-white/5 p-6 hover:border-[#c9a96e]/30 transition-all duration-300 group" style="transition-delay:{{ $loop->index * 60 }}ms;">
-                <div style="color:#c9a96e;font-size:2rem;margin-bottom:.75rem;">{{ $a['icon'] }}</div>
-                <h3 style="color:#fff;font-weight:600;font-size:.9rem;margin-bottom:.4rem;">{{ $a['title'] }}</h3>
-                <p style="color:rgba(255,255,255,.35);font-size:.78rem;line-height:1.6;">{{ $a['desc'] }}</p>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-{{-- ========== BENEFITS ========== --}}
-<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#0a0a0a]" id="benefits">
-    <div class="max-w-7xl mx-auto">
-        <div class="mb-16 reveal">
-            <p class="section-label">สิ่งที่ได้รับ</p>
-            <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-bottom:.75rem;">สิทธิประโยชน์ตัวแทน</h2>
-            <div class="line-gold"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
-            @php
-            $benefits = [
-                ['icon'=>'▶','title'=>'อบรมออนไลน์','desc'=>'คอร์ส 101 Home Automation ฟรี พร้อม Certificate'],
-                ['icon'=>'◎','title'=>'เอกสารครบ','desc'=>'Catalog, Price List, Datasheet, Wiring Diagram'],
-                ['icon'=>'◈','title'=>'สื่อการขาย','desc'=>'รูปสินค้า HD, วิดีโอรีวิว, Brochure พร้อมใช้'],
-                ['icon'=>'◉','title'=>'ทีม Support','desc'=>'ช่วยออกแบบระบบ แก้ปัญหาเทคนิค ตอบ 7 วัน'],
-                ['icon'=>'⬡','title'=>'ราคาส่ง','desc'=>'Margin ดี ราคาแข่งได้ในตลาด'],
-                ['icon'=>'◇','title'=>'การรับประกัน','desc'=>'สินค้ามีรับประกัน คืนง่าย เคลมสะดวก'],
-                ['icon'=>'⚡','title'=>'อัปเดตสินค้าใหม่','desc'=>'รับข้อมูลสินค้าใหม่ก่อนใคร'],
-                ['icon'=>'▦','title'=>'Community','desc'=>'กลุ่มตัวแทน แชร์ความรู้ แชร์โปรเจกต์'],
-            ];
-            @endphp
-            @foreach($benefits as $b)
-            <div class="reveal bg-[#0a0a0a] p-7 hover:bg-[#0f0a00] transition-colors duration-300 group" style="transition-delay:{{ $loop->index * 60 }}ms;">
-                <div style="color:#c9a96e;font-size:1.8rem;margin-bottom:1rem;">{{ $b['icon'] }}</div>
-                <h3 style="color:#fff;font-weight:600;font-size:.9rem;margin-bottom:.5rem;">{{ $b['title'] }}</h3>
-                <p style="color:rgba(255,255,255,.35);font-size:.8rem;line-height:1.6;">{{ $b['desc'] }}</p>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-{{-- ========== PRODUCT CATEGORIES (reuse) ========== --}}
-<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#050505]">
-    <div class="max-w-7xl mx-auto">
-        <div class="mb-16 reveal">
-            <p class="section-label">สินค้าที่จำหน่ายได้</p>
-            <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-bottom:.75rem;">8 หมวดสินค้า ครบวงจร</h2>
-            <div class="line-gold"></div>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            @php
-            $cats = ['สวิตช์ไฟอัจฉริยะ','ระบบควบคุมแอร์','ระบบม่านอัจฉริยะ','ระบบรักษาความปลอดภัย','เซ็นเซอร์อัจฉริยะ','ระบบพลังงาน','ระบบควบคุมบ้าน','อุปกรณ์เสริม'];
-            $icons = ['⬡','❄','▦','◉','◈','⚡','⌂','◎'];
-            @endphp
-            @foreach($cats as $i => $c)
-            <div class="reveal border border-white/5 p-5 text-center hover:border-[#c9a96e]/30 transition-all duration-300" style="transition-delay:{{ $i * 60 }}ms;">
-                <div style="color:#c9a96e;font-size:1.8rem;margin-bottom:.5rem;">{{ $icons[$i] }}</div>
-                <div style="color:rgba(255,255,255,.7);font-size:.8rem;">{{ $c }}</div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-{{-- ========== PROCESS STEPS ========== --}}
-<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#0a0a0a]">
-    <div class="max-w-5xl mx-auto">
-        <div class="mb-16 text-center reveal">
-            <p class="section-label mx-auto">ขั้นตอน</p>
-            <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-bottom:.75rem;">ขั้นตอนการเป็นตัวแทน</h2>
-            <div class="line-gold mx-auto"></div>
-        </div>
-
-        <div class="relative">
-            {{-- Vertical line --}}
-            <div class="absolute left-6 top-0 bottom-0 w-px bg-white/5 hidden md:block"></div>
-            <div class="space-y-6">
-                @php
-                $steps = [
-                    ['n'=>'01','title'=>'สมัคร','desc'=>'กรอกแบบฟอร์มสมัครตัวแทน ใช้เวลาไม่เกิน 5 นาที'],
-                    ['n'=>'02','title'=>'พูดคุยกับทีมงาน','desc'=>'ทีมงานติดต่อกลับภายใน 24 ชั่วโมง เพื่อแนะนำระบบ'],
-                    ['n'=>'03','title'=>'อบรมออนไลน์','desc'=>'เรียนคอร์ส 101 Home Automation ฟรี เรียนได้ทุกที่'],
-                    ['n'=>'04','title'=>'รับเอกสารการขาย','desc'=>'Catalog, Price List, สื่อการขาย พร้อมใช้ทันที'],
-                    ['n'=>'05','title'=>'เริ่มขาย','desc'=>'รับออเดอร์แรก ส่งสินค้าถึงลูกค้า มีทีม Support ช่วย'],
-                    ['n'=>'06','title'=>'ทีมสนับสนุนตลอด','desc'=>'มีปัญหา มีคำถาม ทีมงานพร้อมช่วยเสมอ 7 วัน/สัปดาห์'],
-                ];
-                @endphp
-                @foreach($steps as $s)
-                <div class="reveal flex gap-6 items-start" style="transition-delay:{{ $loop->index * 100 }}ms;">
-                    <div style="width:3rem;height:3rem;border:1px solid rgba(201,169,110,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;background:#0a0a0a;">
-                        <span style="color:#c9a96e;font-size:.75rem;font-weight:700;">{{ $s['n'] }}</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    @foreach([
+                        'Welcome Kit',
+                        'Quick Start Guide',
+                        'สิทธิ์เข้า Dealer Welcome Center',
+                        'สิทธิ์เข้า Partner Academy',
+                        'คำแนะนำการเลือก Starter Kit',
+                        'นัดพูดคุยกับทีมงาน',
+                    ] as $i => $item)
+                    <div class="flex items-center gap-3 p-4 border border-white/5" style="background:rgba(255,255,255,0.02);">
+                        <span style="color:#c9a96e; font-size:0.7rem; font-weight:700; font-family:'Nunito',sans-serif; flex-shrink:0;">{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}</span>
+                        <span style="color:rgba(255,255,255,0.75); font-size:0.85rem;">{{ $item }}</span>
                     </div>
-                    <div class="pb-6 border-b border-white/5 flex-1" @if($loop->last) style="border:none;" @endif>
-                        <h3 style="color:#fff;font-weight:600;font-size:1rem;margin-bottom:.35rem;">{{ $s['title'] }}</h3>
-                        <p style="color:rgba(255,255,255,.4);font-size:.85rem;line-height:1.6;">{{ $s['desc'] }}</p>
+                    @endforeach
+                </div>
+            </div>
+
+            {{-- Welcome Kit image placeholder --}}
+            <div class="reveal">
+                <div style="aspect-ratio:4/3; border:1px dashed rgba(201,169,110,0.3); background:linear-gradient(135deg, rgba(201,169,110,0.05), rgba(0,0,0,0)); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; text-align:center; padding:2rem;">
+                    <div style="width:64px; height:64px; border:1px solid rgba(201,169,110,0.4); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#c9a96e; font-size:1.5rem;">📦</div>
+                    <div>
+                        <div style="font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:#c9a96e; margin-bottom:0.5rem;">S.SMART Welcome Kit</div>
+                        <div style="font-size:0.8rem; color:rgba(255,255,255,0.35); line-height:1.7;">ภาพ Welcome Kit จริง<br>กำลังจัดเตรียม</div>
                     </div>
                 </div>
-                @endforeach
             </div>
         </div>
     </div>
 </section>
 
-{{-- ========== FAQ ========== --}}
-<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#050505]">
-    <div class="max-w-3xl mx-auto">
-        <div class="mb-16 reveal">
-            <p class="section-label">FAQ</p>
-            <h2 style="font-size:clamp(2rem,5vw,3rem);font-weight:700;color:#fff;margin-bottom:.75rem;">คำถามที่พบบ่อย</h2>
-            <div class="line-gold"></div>
-        </div>
-        @php
-        $faqs = [
-            ['q'=>'ต้องมีหน้าร้านหรือไม่?','a'=>'ไม่จำเป็น สามารถขายออนไลน์ผ่าน LINE, Facebook, หรือแนะนำลูกค้าได้เลย ไม่ต้องลงทุนหน้าร้าน'],
-            ['q'=>'ต้องสต็อกสินค้าหรือไม่?','a'=>'ไม่บังคับ สามารถสั่งตามออเดอร์ลูกค้าได้ ทีมงานจะแจ้ง Lead Time ให้ทราบล่วงหน้า'],
-            ['q'=>'มีขั้นต่ำการสั่งซื้อหรือไม่?','a'=>'ไม่มีขั้นต่ำ เริ่มต้นจากชิ้นเดียวก็ได้ ยิ่งสั่งมากยิ่งได้ราคาดี'],
-            ['q'=>'บริษัทช่วยออกแบบระบบให้หรือไม่?','a'=>'ช่วยได้ครับ ทีม Technical Support พร้อมช่วยออกแบบ Wiring Diagram และแนะนำสินค้าที่เหมาะสมกับโปรเจกต์'],
-            ['q'=>'บริษัทช่วยอบรมหรือไม่?','a'=>'มีคอร์สออนไลน์ฟรี "101 Home Automation" ครอบคลุมตั้งแต่พื้นฐานถึงการติดตั้งและการขาย'],
-        ];
-        @endphp
-        <div class="space-y-3">
-            @foreach($faqs as $i => $faq)
-            <div class="reveal faq-item border border-white/8 overflow-hidden" style="transition-delay:{{ $i * 80 }}ms;">
-                <button class="faq-toggle w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
-                    <span style="color:#fff;font-size:.9rem;font-weight:500;">{{ $faq['q'] }}</span>
-                    <span class="faq-icon" style="color:#c9a96e;font-size:1.2rem;flex-shrink:0;transition:transform .3s;">+</span>
-                </button>
-                <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height .3s ease;">
-                    <p style="color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.7;padding:0 1.25rem 1.25rem;">{{ $faq['a'] }}</p>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-{{-- ========== APPLY CTA ========== --}}
-<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#0a0a0a] border-t border-white/5" id="apply">
-    <div class="max-w-3xl mx-auto text-center">
-        <p class="section-label reveal mx-auto">เริ่มต้นได้เลย</p>
-        <h2 class="reveal" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-bottom:1rem;">
-            พร้อมร่วมทีม<br><span class="gradient-gold">S.SMART</span> แล้วหรือยัง?
+{{-- ===================================================
+     SECTION 9 : ปิดการขาย — CTA
+     =================================================== --}}
+<section class="reveal" id="apply" style="background:#0a0500; padding:7rem 2rem; position:relative; overflow:hidden;">
+    <div class="absolute inset-0" style="background:radial-gradient(ellipse at 50% 100%, rgba(201,169,110,0.1) 0%, transparent 60%);"></div>
+    <div class="max-w-3xl mx-auto text-center relative z-10">
+        <p class="section-label mx-auto reveal" style="color:rgba(201,169,110,0.7);">เริ่มต้นวันนี้</p>
+        <h2 class="reveal" style="font-size:clamp(2rem,5vw,3.5rem); font-weight:700; letter-spacing:-0.02em; color:#fff; margin:0.75rem 0 1rem; line-height:1.15;">
+            พร้อมร่วมเป็นพันธมิตรกับ<br>
+            <span class="gradient-gold">S.SMART</span> แล้วหรือยัง
         </h2>
-        <p class="reveal" style="color:rgba(255,255,255,.4);margin-bottom:2.5rem;line-height:1.7;">
-            สมัครวันนี้ พูดคุยกับทีมงานฟรี ไม่มีค่าใช้จ่ายในการเป็นตัวแทน
+        <p class="reveal" style="color:rgba(255,255,255,0.45); margin-bottom:2.5rem; line-height:1.8; font-size:0.95rem;">
+            สมัครวันนี้ พูดคุยกับทีมงานได้ฟรี<br>
+            ไม่มีค่าใช้จ่ายในการสมัครเป็นตัวแทนจำหน่าย
         </p>
         <div class="flex flex-wrap gap-4 justify-center reveal">
-            <a href="https://line.me/ti/p/~0982955259" target="_blank" rel="noopener noreferrer" class="btn-gold" style="padding:.9rem 3rem;font-size:.75rem;">
+            <a href="https://line.me/ti/p/~{{ config('site.line_id') }}" target="_blank" rel="noopener noreferrer" class="btn-gold" style="padding:0.9rem 3rem;">
                 สมัครผ่าน LINE
             </a>
-            <a href="tel:0982955259" class="btn-outline" style="padding:.9rem 2.5rem;font-size:.75rem;">
-                โทรสอบถาม
+            <a href="tel:{{ config('site.phone_1') }}" class="btn-outline" style="padding:0.9rem 2.5rem;">
+                โทรสอบถาม 09 8295 5259
             </a>
         </div>
     </div>
@@ -255,7 +375,6 @@
 
 @endsection
 
-{{-- navbar scroll + reveal handled by resources/js/app.js --}}
 @push('scripts')
 <script>
 function toggleFaq(btn) {
