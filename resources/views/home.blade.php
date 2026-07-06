@@ -7,17 +7,15 @@
 {{-- ===================================================
      1. HERO — Designing Intelligent Living
      Background: Lifestyle คือพระเอก (ไม่ใช้ภาพสินค้า)
-     TODO: เมื่อได้ภาพ Luxury Modern House ช่วงเย็น เปิดไฟ Warm White
-           ให้เปลี่ยน src ด้านล่างเป็น images/hero/luxury-house-dusk.jpg
+     ภาพจริงจากโปรเจกต์ — ห้องพักผ่อนไฟ Warm White พร้อมม่าน
      =================================================== --}}
 <section class="section-full" id="hero" style="background:#050505;">
     <div class="absolute inset-0 overflow-hidden">
-        <img src="{{ asset('images/proof/curtain-sheer-city.jpg') }}" alt="S.SMART Smart Living"
-             class="w-full h-full object-cover object-center" style="opacity:0.45;">
-        {{-- Warm-white color grade ให้ภาพอบอุ่นแบบช่วงเย็น --}}
-        <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(60,35,5,0.55) 0%, rgba(10,8,5,0.75) 60%, #050505 100%);"></div>
-        <div class="absolute inset-0" style="background:radial-gradient(ellipse 70% 60% at 75% 45%, rgba(201,169,110,0.14) 0%, transparent 65%);"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
+        <img src="{{ asset('images/proof/hero-warm-interior.jpg') }}" alt="S.SMART Smart Living — บ้านที่อบอุ่นด้วยแสงไฟ Warm White"
+             class="w-full h-full object-cover" style="opacity:0.6; object-position:center 40%;">
+        <div class="absolute inset-0" style="background:linear-gradient(100deg, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.55) 45%, rgba(20,14,5,0.25) 100%);"></div>
+        <div class="absolute inset-0" style="background:radial-gradient(ellipse 70% 60% at 75% 45%, rgba(201,169,110,0.1) 0%, transparent 65%);"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
     </div>
 
     <div class="section-content w-full">
@@ -317,7 +315,7 @@
                 ['images/proof/doorbell-teak-door.jpg','Video Doorbell + Smart Lock','บ้านเดี่ยว'],
                 ['images/proof/curtain-sheer-city.jpg','ม่านไฟฟ้า 2 ชั้น','คอนโดมิเนียม'],
                 ['images/proof/panel-thermostat-scene.jpg','ศูนย์ควบคุมรวม + Thermostat','วิลล่า'],
-                ['images/proof/switch-wallpaper.jpg','สวิตช์อัจฉริยะทั้งหลัง','โรงแรม'],
+                ['images/proof/villa-pool.jpg','ระบบ Smart Living ทั้งหลัง','Pool Villa'],
                 ['images/proof/lighting-led-wardrobe.jpg','ระบบไฟ LED บิวท์อิน','งาน Interior'],
             ] as $work)
             <div class="group reveal relative overflow-hidden" style="aspect-ratio:4/3; transition-delay:{{ $loop->index * 60 }}ms;">
@@ -364,8 +362,8 @@
                 </div>
             </div>
             <div class="reveal hidden lg:block">
-                <img src="{{ asset('images/proof/panel-hall-cabinet.jpg') }}" alt="ระบบ Smart Living ติดตั้งจริงโดยตัวแทน S.SMART"
-                     class="w-full object-cover" style="height:380px; filter:brightness(0.85);">
+                <img src="{{ asset('images/proof/team-client-tablet.jpg') }}" alt="ทีมงาน S.SMART แนะนำการใช้งานระบบให้ลูกค้า"
+                     class="w-full object-cover" style="height:380px; object-position:center 20%; filter:brightness(0.9);">
             </div>
         </div>
     </div>

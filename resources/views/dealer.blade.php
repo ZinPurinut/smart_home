@@ -6,13 +6,12 @@
 
 {{-- ===================================================
      SECTION 1 : HERO — Business Partnership
-     TODO: เมื่อได้ภาพ "ทีมงานประชุมกับผู้รับเหมา / สถาปนิกดูแบบบ้าน"
-           ให้เปลี่ยน src เป็นภาพนั้น (ตอนนี้ใช้ภาพระบบติดตั้งจริงไปก่อน)
+     ภาพจริง: ทีมงาน S.SMART แนะนำระบบให้ลูกค้าหน้างาน
      =================================================== --}}
 <section class="section-full" style="background:#030303;">
     <div class="absolute inset-0 overflow-hidden">
-        <img src="{{ asset('images/proof/panel-hall-wide.jpg') }}" alt="ระบบ Smart Living ที่ตัวแทน S.SMART จำหน่ายและติดตั้ง"
-             class="w-full h-full object-cover" style="opacity:0.3; object-position:center;">
+        <img src="{{ asset('images/proof/team-client-tablet.jpg') }}" alt="ทีมงาน S.SMART แนะนำระบบให้ลูกค้าหน้างานจริง"
+             class="w-full h-full object-cover" style="opacity:0.35; object-position:center 22%;">
         <div class="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
     </div>
@@ -55,11 +54,11 @@
 
         @php
         $whyCards = [
-            ['ประสบการณ์ในธุรกิจ Smart Living','เรามีประสบการณ์จากโครงการจริง และเข้าใจการใช้งานในบ้านทุกประเภท','images/proof/team-install-doorbell.jpg','ทีมงานหน้างานจริง'],
+            ['ประสบการณ์ในธุรกิจ Smart Living','เรามีประสบการณ์จากโครงการจริง และเข้าใจการใช้งานในบ้านทุกประเภท','images/proof/team-ladder-install.jpg','ทีมงานหน้างานจริง'],
             ['สินค้าคัดสรรคุณภาพสูง','เราเลือกผู้ผลิตที่มีมาตรฐาน และพัฒนาสินค้าหลายรายการภายใต้แบรนด์ S.SMART','images/proof/dimmer-white-glass.jpg','สินค้าแบรนด์ S.SMART'],
             ['ระบบครบวงจร','ลูกค้าสามารถเริ่มจากจุดเล็ก ๆ และต่อยอดได้ทั้งระบบ','images/proof/panel-thermostat-scene.jpg','ระบบที่ทำงานร่วมกัน'],
-            ['ทีมสนับสนุน','ช่วยเลือกสินค้า ออกแบบระบบ และให้คำปรึกษาก่อนและหลังการขาย','images/proof/control-panel-hall.jpg','ออกแบบระบบให้ทุกโปรเจกต์'],
-            ['เติบโตไปด้วยกัน','เราไม่ได้มองหาผู้ซื้อสินค้า แต่มองหาพันธมิตรระยะยาว','images/proof/panel-hall-cabinet.jpg','พันธมิตรระยะยาว'],
+            ['ทีมสนับสนุน','ช่วยเลือกสินค้า ออกแบบระบบ และให้คำปรึกษาก่อนและหลังการขาย','images/proof/team-consult-homeowner.jpg','ดูแลลูกค้าถึงหน้างาน'],
+            ['เติบโตไปด้วยกัน','เราไม่ได้มองหาผู้ซื้อสินค้า แต่มองหาพันธมิตรระยะยาว','images/proof/team-explain-client.jpg','ส่งมอบงานร่วมกับลูกค้า'],
         ];
         @endphp
 
@@ -92,11 +91,11 @@
     </p>
     <div class="grid grid-cols-3 md:grid-cols-6 gap-1 px-1">
         @foreach([
-            ['images/proof/doorbell-teak-door.jpg','Video Doorbell หน้าบ้านจริง'],
+            ['images/proof/smartlock-teak-villa.jpg','Smart Lock งาน Pool Villa'],
             ['images/proof/switch-black-marble.jpg','สวิตช์ในห้องนั่งเล่น'],
-            ['images/proof/panel-scene-6key.jpg','Scene Panel งาน Interior'],
+            ['images/proof/tech-tablet-check.jpg','ทีมงานตรวจระบบหน้างาน'],
             ['images/proof/curtain-sheer-city.jpg','ม่านไฟฟ้าในคอนโด'],
-            ['images/proof/switch-wallpaper.jpg','สวิตช์งานโรงแรม'],
+            ['images/proof/panel-scene-6key.jpg','Scene Panel งาน Interior'],
             ['images/proof/lighting-led-wardrobe.jpg','ไฟ LED บิวท์อิน'],
         ] as $p)
         <div style="aspect-ratio:1/1; overflow:hidden;">
@@ -107,8 +106,8 @@
 </section>
 
 {{-- ===================================================
-     SECTION 3 : โปรแกรมนี้เหมาะกับใคร — 6 การ์ด
-     TODO: รอภาพจริงของแต่ละกลุ่ม + ข้อความ Final จากพี่ (ตอนนี้เป็น Draft)
+     SECTION 3 : โปรแกรมนี้เหมาะกับใคร — 6 การ์ดพร้อมภาพจริง
+     TODO: รอข้อความ Final จากพี่ (ตอนนี้เป็น Draft)
      =================================================== --}}
 <section class="reveal" id="who" style="background:#050505; padding:6rem 2rem;">
     <div class="max-w-7xl mx-auto">
@@ -121,21 +120,21 @@
 
         @php
         $audiences = [
-            ['เจ้าของกิจการรับเหมา','เพิ่มมูลค่างานรับเหมาด้วยแพ็กเกจ Smart Living ที่มีทีมช่วยออกแบบและสนับสนุนการติดตั้ง'],
-            ['สถาปนิก','มีทีมช่วยวางระบบตั้งแต่ขั้นตอนออกแบบ พร้อม Spec และ Wiring Diagram สำหรับงานเขียนแบบ'],
-            ['Interior Designer','สวิตช์และอุปกรณ์ดีไซน์พรีเมียม 4 เฉดสี เข้ากับงานตกแต่งได้ทุกสไตล์'],
-            ['บริษัทระบบไฟฟ้า','ต่อยอดงานระบบไฟฟ้าเดิมสู่งาน Smart Home ด้วยสินค้าครบทั้ง 8 หมวด'],
-            ['ผู้รับเหมาตกแต่ง','เพิ่มบริการใหม่ให้ลูกค้าเดิม โดยมีทีมเทคนิคของ S.SMART สนับสนุนทุกขั้นตอน'],
-            ['ร้านวัสดุก่อสร้าง','เพิ่มไลน์สินค้า Smart Home ที่ Margin ดี พร้อมสื่อการขายและการอบรมจากบริษัท'],
+            ['เจ้าของกิจการรับเหมา','เพิ่มมูลค่างานรับเหมาด้วยแพ็กเกจ Smart Living ที่มีทีมช่วยออกแบบและสนับสนุนการติดตั้ง','images/proof/site-consult.jpg'],
+            ['สถาปนิก','มีทีมช่วยวางระบบตั้งแต่ขั้นตอนออกแบบ พร้อม Spec และ Wiring Diagram สำหรับงานเขียนแบบ','images/proof/house-modern-exterior.jpg'],
+            ['Interior Designer','สวิตช์และอุปกรณ์ดีไซน์พรีเมียม 4 เฉดสี เข้ากับงานตกแต่งได้ทุกสไตล์','images/proof/wood-mosaic-interior.jpg'],
+            ['บริษัทระบบไฟฟ้า','ต่อยอดงานระบบไฟฟ้าเดิมสู่งาน Smart Home ด้วยสินค้าครบทั้ง 8 หมวด','images/proof/wiring-hand.jpg'],
+            ['ผู้รับเหมาตกแต่ง','เพิ่มบริการใหม่ให้ลูกค้าเดิม โดยมีทีมเทคนิคของ S.SMART สนับสนุนทุกขั้นตอน','images/proof/team-wiring.jpg'],
+            ['ร้านวัสดุก่อสร้าง','เพิ่มไลน์สินค้า Smart Home ที่ Margin ดี พร้อมสื่อการขายและการอบรมจากบริษัท','images/proof/panel-installed-wall.jpg'],
         ];
         @endphp
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             @foreach($audiences as $i => $a)
             <div class="reveal border border-white/5 hover:border-[#c9a96e]/30 transition-all duration-300 overflow-hidden" style="background:#0a0a0a; transition-delay:{{ $i * 60 }}ms;">
-                {{-- Placeholder ภาพจริงของแต่ละกลุ่ม (รอพี่ส่ง) --}}
-                <div style="aspect-ratio:16/7; background:linear-gradient(135deg, rgba(201,169,110,0.08), rgba(0,0,0,0)); display:flex; align-items:center; justify-content:center; border-bottom:1px solid rgba(255,255,255,0.04);">
-                    <span style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(201,169,110,0.35);">ภาพจริงกำลังจัดเตรียม</span>
+                <div style="aspect-ratio:16/8; overflow:hidden; border-bottom:1px solid rgba(255,255,255,0.04);">
+                    <img src="{{ asset($a[2]) }}" alt="{{ $a[0] }} — ตัวแทนจำหน่าย S.SMART"
+                         class="w-full h-full object-cover" style="opacity:0.75;">
                 </div>
                 <div style="padding:1.5rem;">
                     <h3 style="color:#fff; font-weight:600; font-size:0.95rem; margin-bottom:0.5rem;">{{ $a[0] }}</h3>
