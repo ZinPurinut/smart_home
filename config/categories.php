@@ -91,6 +91,11 @@ return [
         'en'    => 'Home Control',
         'desc'  => 'Smart Panel, Gateway, Scene Controller, Voice Control',
         'image' => 'images/proof/panel-hall-wide.jpg',
+        'products' => [
+            ['image' => 'images/products/real/scene-controller-lcd.jpg', 'name' => 'Scene Controller', 'spec' => 'เรียกฉาก Welcome / Relax / Reading / Night'],
+            ['image' => 'images/products/real/scene-panel-bank.jpg', 'name' => 'Touch Control Panel', 'spec' => 'แผงสัมผัสควบคุมรวม — ติดตั้งจริงหน้างาน'],
+            ['image' => 'images/products/real/touch-panel-row-black.jpg', 'name' => 'Smart Touch Panel Series', 'spec' => 'จัดชุดเรียงแผง 1–3 Gang ตามหน้างาน'],
+        ],
     ],
     'accessories' => [
         'no'    => '08',
