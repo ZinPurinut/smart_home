@@ -28,6 +28,12 @@ return [
             ['image' => 'images/products/real/dimmer-silver-2gang.jpg', 'name' => 'Stainless Dimmer 2 Gang', 'spec' => 'สีเงิน 86×86 มม.'],
             ['image' => 'images/products/real/bronze-classic-2gang.jpg', 'name' => 'Classic Bronze Switch 2 Gang', 'spec' => 'ซีรีส์บรอนซ์คลาสสิก'],
             ['image' => 'images/products/real/black-bronze-4gang.jpg', 'name' => 'Black Bronze Switch 4 Gang', 'spec' => 'ซีรีส์ Black Bronze'],
+            ['image' => 'images/products/real/x39uag-ag-glass.jpg', 'name' => 'S.Smart Switch รุ่น X39UAG', 'spec' => 'AG Glass — วัสดุเดียวกับ iPhone'],
+            ['image' => 'images/products/real/no-neutral-zigbee-1gang-white.jpg', 'name' => 'No Neutral Zigbee Switch 1 Gang', 'spec' => '16A AC100–240V ไม่ต้องใช้สาย N'],
+            ['image' => 'images/products/real/no-neutral-zigbee-2gang-white.jpg', 'name' => 'No Neutral Zigbee Switch 2 Gang', 'spec' => '16A AC100–240V ไม่ต้องใช้สาย N'],
+            ['image' => 'images/products/real/no-neutral-zigbee-3gang-white.jpg', 'name' => 'No Neutral Zigbee Switch 3 Gang', 'spec' => '16A AC100–240V ไม่ต้องใช้สาย N'],
+            ['image' => 'images/products/real/smart-dimmer-white.jpg', 'name' => 'S.Smart Light Switch Dimmer', 'spec' => 'สวิตช์หรี่ไฟอัจฉริยะ สีขาว'],
+            ['image' => 'images/products/real/bronze-dimmer-led500w.jpg', 'name' => 'Bronze Dimmer LED 500W', 'spec' => 'สวิตช์หรี่ไฟซีรีส์บรอนซ์'],
         ],
     ],
     'ac-control' => [
@@ -51,7 +57,10 @@ return [
         'desc'  => 'Smart Lock, Video Doorbell, Auto Gate, กล้อง CCTV',
         'image' => 'images/proof/doorbell-teak-door.jpg',
         'products' => [
+            ['image' => 'images/products/real/remootio3-gate-controller.jpg', 'name' => 'Remootio 3', 'spec' => 'ควบคุมประตูอัตโนมัติผ่านแอปมือถือ'],
             ['image' => 'images/products/real/touch-doorbell.jpg', 'name' => 'Touch Switch Bell', 'spec' => 'กริ่งสัมผัสหน้าห้องพัก'],
+            ['image' => 'images/products/real/black-bronze-doorbell.jpg', 'name' => 'Black Bronze Doorbell Switch', 'spec' => 'สวิตช์กระดิ่งซีรีส์ Black Bronze'],
+            ['image' => 'images/products/real/bronze-doorbell-switch.jpg', 'name' => 'Bronze Doorbell Switch', 'spec' => 'สวิตช์กระดิ่งซีรีส์บรอนซ์'],
         ],
     ],
     'sensor' => [
@@ -60,6 +69,9 @@ return [
         'en'    => 'Smart Sensor',
         'desc'  => 'PIR Motion, Door Sensor, Smoke Detector, Water Leak Sensor',
         'image' => 'images/proof/panel-scene-6key.jpg',
+        'products' => [
+            ['image' => 'images/products/real/smart-sensor.jpg', 'name' => 'S.Smart Door/Window Sensor', 'spec' => 'ไร้สาย — Wi-Fi / Zigbee / RF 433MHz'],
+        ],
     ],
     'energy' => [
         'no'    => '06',
@@ -70,6 +82,7 @@ return [
         'products' => [
             ['image' => 'images/products/real/energy-saving-switch.jpg', 'name' => 'Energy Saving Switch', 'spec' => 'ระบบตัดไฟอัตโนมัติ'],
             ['image' => 'images/products/real/hotel-keycard-switch.jpg', 'name' => 'Keycard Energy Saving Switch', 'spec' => 'สวิตช์คีย์การ์ดประหยัดพลังงาน'],
+            ['image' => 'images/products/real/black-bronze-hotel-cutoff.jpg', 'name' => 'Black Bronze ตัวตัดไฟโรงแรม', 'spec' => 'ซีรีส์ Black Bronze'],
         ],
     ],
     'control' => [
