@@ -24,6 +24,11 @@ $pages = [
     '/training' => 'training/index.html',
 ];
 
+// Shell pages ของทุกหมวดสินค้า
+foreach (array_keys(require __DIR__ . '/config/categories.php') as $slug) {
+    $pages["/products/{$slug}"] = "products/{$slug}/index.html";
+}
+
 $docsDir = __DIR__ . '/docs';
 
 foreach ($pages as $url => $outFile) {

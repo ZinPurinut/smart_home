@@ -64,7 +64,26 @@
             </h2>
         </div>
 
-        {{-- TODO: ทีมงานลงสินค้าจริงแทนการ์ด placeholder ด้านล่างนี้ --}}
+        @if(!empty($category['products']))
+        {{-- สินค้าจริงจากอัลบั้มภาพสินค้า — น้องใบพลูเพิ่ม/แก้รายการได้ที่ config/categories.php --}}
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-px" style="background:rgba(255,255,255,0.05);">
+            @foreach($category['products'] as $product)
+            <div style="background:#0a0a0a; display:flex; flex-direction:column;">
+                <div style="aspect-ratio:1/1; overflow:hidden; background:#111;">
+                    <img src="{{ asset($product['image']) }}" alt="{{ $product['name'] }}"
+                         class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div style="padding:1rem 1.25rem 1.5rem;">
+                    <div style="color:rgba(255,255,255,0.85); font-size:0.85rem; font-weight:600; line-height:1.45;">{{ $product['name'] }}</div>
+                    @if(!empty($product['spec']))
+                    <div style="color:rgba(255,255,255,0.35); font-size:0.72rem; margin-top:0.35rem;">{{ $product['spec'] }}</div>
+                    @endif
+                </div>
+            </div>
+            @endforeach
+        </div>
+        @else
+        {{-- TODO: ทีมงานลงสินค้าจริงแทนการ์ด placeholder ด้านล่างนี้ (เพิ่ม 'products' ใน config/categories.php) --}}
         <div class="grid grid-cols-2 md:grid-cols-4 gap-px" style="background:rgba(255,255,255,0.05);">
             @for($i = 1; $i <= 4; $i++)
             <div style="background:#0a0a0a; aspect-ratio:1/1.15; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; padding:1.5rem; text-align:center;">
@@ -74,6 +93,7 @@
             </div>
             @endfor
         </div>
+        @endif
 
         <p style="color:rgba(255,255,255,0.3); font-size:0.85rem; text-align:center; margin-top:2rem;">
             ระหว่างนี้สามารถดูสินค้าทั้งหมดได้ที่

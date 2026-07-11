@@ -15,6 +15,20 @@ return [
         'en'    => 'Smart Switch',
         'desc'  => 'Touch Switch, WiFi/Zigbee Switch, AG Glass Series รองรับ 1–6 ช่อง',
         'image' => 'images/proof/switch-black-marble.jpg',
+        'products' => [
+            ['image' => 'images/products/real/zigbee-switch-1gang-black.jpg', 'name' => 'S.Smart On/Off Switch Zigbee 1 Gang', 'spec' => '118×74×36 มม. กระจก Tempered'],
+            ['image' => 'images/products/real/zigbee-switch-2gang-black.jpg', 'name' => 'S.Smart On/Off Switch Zigbee 2 Gang', 'spec' => '118×74×36 มม. กระจก Tempered'],
+            ['image' => 'images/products/real/zigbee-switch-3gang-black.jpg', 'name' => 'S.Smart On/Off Switch Zigbee 3 Gang', 'spec' => '118×74×36 มม. กระจก Tempered'],
+            ['image' => 'images/products/real/zigbee-switch-4gang-black.jpg', 'name' => 'S.Smart On/Off Switch Zigbee 4 Gang', 'spec' => '118×74×36 มม. กระจก Tempered'],
+            ['image' => 'images/products/real/touch-panels-4colors.jpg', 'name' => 'Touch Switch Series', 'spec' => 'สีทอง / เทา / ขาว / ดำ'],
+            ['image' => 'images/products/real/touch-switch-3gang-set.jpg', 'name' => 'Touch Switch 3 Gang', 'spec' => 'พร้อมชุดติดตั้งครบกล่อง'],
+            ['image' => 'images/products/real/toggle-gold-eu-series.jpg', 'name' => 'EU Series Stainless Toggle', 'spec' => 'สแตนเลสสีทอง 86×86 มม.'],
+            ['image' => 'images/products/real/toggle-black-4gang.jpg', 'name' => 'Stainless Toggle 4 Gang 2 Way', 'spec' => 'สีดำ 86×86 มม.'],
+            ['image' => 'images/products/real/dimmer-trio.jpg', 'name' => 'Stainless Switch Dimmer', 'spec' => 'สวิตช์หรี่ไฟ ทอง / ขาว / ดำ'],
+            ['image' => 'images/products/real/dimmer-silver-2gang.jpg', 'name' => 'Stainless Dimmer 2 Gang', 'spec' => 'สีเงิน 86×86 มม.'],
+            ['image' => 'images/products/real/bronze-classic-2gang.jpg', 'name' => 'Classic Bronze Switch 2 Gang', 'spec' => 'ซีรีส์บรอนซ์คลาสสิก'],
+            ['image' => 'images/products/real/black-bronze-4gang.jpg', 'name' => 'Black Bronze Switch 4 Gang', 'spec' => 'ซีรีส์ Black Bronze'],
+        ],
     ],
     'ac-control' => [
         'no'    => '02',
@@ -36,6 +50,9 @@ return [
         'en'    => 'Security System',
         'desc'  => 'Smart Lock, Video Doorbell, Auto Gate, กล้อง CCTV',
         'image' => 'images/proof/doorbell-teak-door.jpg',
+        'products' => [
+            ['image' => 'images/products/real/touch-doorbell.jpg', 'name' => 'Touch Switch Bell', 'spec' => 'กริ่งสัมผัสหน้าห้องพัก'],
+        ],
     ],
     'sensor' => [
         'no'    => '05',
@@ -50,6 +67,10 @@ return [
         'en'    => 'Energy Management',
         'desc'  => 'Smart Plug, Energy Monitor, Smart Circuit Breaker',
         'image' => 'images/proof/switch-pantry.jpg',
+        'products' => [
+            ['image' => 'images/products/real/energy-saving-switch.jpg', 'name' => 'Energy Saving Switch', 'spec' => 'ระบบตัดไฟอัตโนมัติ'],
+            ['image' => 'images/products/real/hotel-keycard-switch.jpg', 'name' => 'Keycard Energy Saving Switch', 'spec' => 'สวิตช์คีย์การ์ดประหยัดพลังงาน'],
+        ],
     ],
     'control' => [
         'no'    => '07',
@@ -64,5 +85,19 @@ return [
         'en'    => 'Electrical & Accessories',
         'desc'  => 'Socket, Wall Plate, LED Strip, Wiring Accessories',
         'image' => 'images/proof/lighting-led-wardrobe.jpg',
+        'products' => [
+            ['image' => 'images/products/real/socket-eu-stainless-set.jpg', 'name' => 'EU Stainless Socket', 'spec' => '146×90 มม. หลายเฉดสี'],
+            ['image' => 'images/products/real/socket-2usb-c-silver.jpg', 'name' => 'Socket + 2 USB-C', 'spec' => 'EU14633/2USB-C สีเงิน'],
+            ['image' => 'images/products/real/socket-usb-gold.jpg', 'name' => 'Socket + Duo USB สีทอง', 'spec' => 'EU33/2UB-G 86×86 มม.'],
+            ['image' => 'images/products/real/socket-usb-copper.jpg', 'name' => 'Socket + USB สีทองแดง', 'spec' => 'Universal 3 ขา + USB Charger'],
+            ['image' => 'images/products/real/socket-5pin-copper.jpg', 'name' => 'Universal Socket 5 ขา', 'spec' => 'ซีรีส์ทองแดง'],
+            ['image' => 'images/products/real/socket-2usb-silver.jpg', 'name' => 'Socket + 2 USB สีเงิน', 'spec' => 'EU14633/2USB-S'],
+            ['image' => 'images/products/real/socket-popup-floor.jpg', 'name' => 'Pop-up Floor Socket', 'spec' => 'ปลั๊กฝังพื้นแบบผุดขึ้น'],
+            ['image' => 'images/products/real/outlet-tv-gold.jpg', 'name' => 'Stainless Outlet TV', 'spec' => 'EU33/TV-G สีทอง 86×86 มม.'],
+            ['image' => 'images/products/real/outlet-lan-gold.jpg', 'name' => 'Stainless Outlet LAN', 'spec' => 'EU33/LAN-G สีทอง 86×86 มม.'],
+            ['image' => 'images/products/real/outlet-telephone-gold.jpg', 'name' => 'Stainless Outlet Telephone', 'spec' => 'EU3/3T-G สีทอง 86×86 มม.'],
+            ['image' => 'images/products/real/wall-box.jpg', 'name' => 'Wall Box', 'spec' => 'กล่องฝังผนังสำหรับงานติดตั้ง'],
+            ['image' => 'images/products/real/function-accessories.jpg', 'name' => 'Function Accessories', 'spec' => 'โมดูล USB / LAN / TEL'],
+        ],
     ],
 ];
