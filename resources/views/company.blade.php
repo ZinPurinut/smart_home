@@ -42,7 +42,7 @@
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <p class="section-label reveal">เกี่ยวกับเรา</p>
+                <p class="section-label reveal">Home</p>
                 <h2 class="reveal" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1.5rem;">
                     ผู้ให้บริการระบบ<br>
                     <span class="gradient-gold">Smart Home ครบวงจร</span>
@@ -247,8 +247,8 @@
     </div>
 </section>
 
-{{-- ========== CONTACT ========== --}}
-<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#0a0a0a] border-t border-white/5" id="contact">
+{{-- ========== Contact Us ========== --}}
+<section class="py-28 px-8 md:px-16 lg:px-24 bg-[#0a0a0a] border-t border-white/5" id="Contact Us">
     <div class="max-w-3xl mx-auto text-center">
         <p class="section-label reveal mx-auto">ติดต่อบริษัท</p>
         <h2 class="reveal" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-bottom:1rem;">พร้อมให้คำปรึกษา</h2>

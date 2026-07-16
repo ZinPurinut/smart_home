@@ -1,0 +1,83 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 4096
+  },
+  "provider": {
+    "ollama": {
+      "name": "Ollama-local",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://ai.idtnida.online/v1",
+        "headers": {
+          "Authorization": "Bearer sk-QCnd3MAMZIfhR_AiJpu6aw"
+        }
+      },
+      "models": {
+        "qwen3-27b-local": {
+          "name": "qwen3-27b-local",
+          "_launch": true,
+          "id": "qwen3-27b-local",
+          "tool_call": true,
+          "options": {
+            "temperature": 0,
+            "top_p": 1,
+            "num_predict": 4096,
+            "num_ctx": 32768
+          }
+        },
+        "gemma-4-26B-A4B-it-UD-Q4_K_M.gguf": {
+          "name": "gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+          "_launch": true,
+          "id": "gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+          "tool_call": true
+        }
+      }
+    },
+    "litellm": {
+      "name": "LiteLLM",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://litellm.idtnida.online/v1",
+        "headers": {
+          "Authorization": "Bearer sk-_hjRww_o-MI-7sgU1PAE4g"
+        }
+      },
+      "models": {
+        "qwen3-27b-local": {
+          "name": "qwen3-27b-local",
+          "id": "qwen3-27b-local",
+          "tool_call": true
+        },
+        "qwen3.6-35B-DGX": {
+          "name": "qwen3.6-35B-DGX",
+          "id": "qwen3.6-35B-DGX",
+          "tool_call": true
+        },
+        "ornith-35b": {
+          "name": "ornith-35b",
+          "id": "ornith-35b",
+          "tool_call": true
+        },
+        "gemma4-26b": {
+          "name": "gemma4-26b",
+          "id": "gemma4-26b",
+          "tool_call": true
+        }
+      }
+    }
+  },
+  "mcp": {
+    "webfetch": {
+      "type": "remote",
+      "url": "https://webfetch.idtnida.online/mcp"
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
+      "enabled": true
+    }
+  }
+}

@@ -10,7 +10,7 @@ SpaceX-style landing page สำหรับ **S.Smart Automation Systems Co., L
 - **Framework:** Laravel 11
 - **CSS:** Tailwind CSS v4 (via `@tailwindcss/vite`)
 - **Build Tool:** Vite
-- **PHP:** 8.2+
+- **PHP:** 8.2+ce
 - **Node:** 20+
 
 ## Quick Start
@@ -84,7 +84,7 @@ routes/
 5. **Categories Grid** — 6-card grid (all product categories)
 6. **Smart Home** — Ecosystem section with WiFi+Zigbee callouts
 7. **About** — Stats grid + company description
-8. **Contact** — Phone, LINE, Facebook + shop CTA
+8. **Contact Us** — Phone, LINE, Facebook + shop CTA
 
 ## Company Content (from ssmartluxuryswitch.com)
 - **Company:** บริษัท เอส.สมาร์ท ออโต้เมชั่น ซิสเท็มส์ จำกัด

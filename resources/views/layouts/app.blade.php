@@ -26,12 +26,12 @@
 
         {{-- Desktop Nav --}}
         <div class="hidden lg:flex items-center gap-8">
-            <a href="{{ route('home') }}#about" class="nav-link">เกี่ยวกับเรา</a>
-            <a href="{{ route('home') }}#categories" class="nav-link">หมวดสินค้า</a>
+            <a href="{{ route('home') }}#about" class="nav-link">Home</a>
+            <a href="{{ route('home') }}#categories" class="nav-link">Product</a>
             <a href="{{ route('home') }}#portfolio" class="nav-link">ผลงาน</a>
             <a href="{{ route('dealer') }}" class="nav-link">Dealer</a>
-            <a href="{{ route('training') }}" class="nav-link">101 Training</a>
-            <a href="{{ route('home') }}#contact" class="nav-link">Contact</a>
+            <a href="{{ route('training') }}" class="nav-link">Knowledge center</a>
+            <a href="{{ route('home') }}#Contact Us" class="nav-link">Contact Us</a>
         </div>
 
         {{-- CTA --}}
@@ -53,11 +53,11 @@
 
     {{-- Mobile Menu --}}
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-sm hidden flex-col justify-center items-center gap-8">
-        <a href="{{ route('home') }}#about" class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">เกี่ยวกับเรา</a>
-        <a href="{{ route('home') }}#categories" class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">หมวดสินค้า</a>
+        <a href="{{ route('home') }}#about" class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">Home</a>
+        <a href="{{ route('home') }}#categories" class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">Product</a>
         <a href="{{ route('dealer') }}"   class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">Dealer</a>
-        <a href="{{ route('training') }}" class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">101 Training</a>
-        <a href="{{ route('home') }}#contact" class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">Contact</a>
+        <a href="{{ route('training') }}" class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">Knowledge center</a>
+        <a href="{{ route('home') }}#Contact Us" class="text-2xl tracking-widest uppercase text-white/70 hover:text-white mobile-nav-link">Contact Us</a>
         <a href="{{ config('site.store_url') }}" target="_blank" rel="noopener noreferrer"
            class="mt-4 text-sm tracking-widest uppercase text-[#c9a96e] border border-[#c9a96e] px-8 py-3 mobile-nav-link">
             Shop Now
@@ -111,17 +111,17 @@
                 <div>
                     <h4 class="text-xs tracking-widest uppercase text-white/30 mb-6">Pages</h4>
                     <ul class="space-y-3">
-                        <li><a href="{{ route('home') }}#about"  class="text-sm text-white/50 hover:text-white transition-colors">เกี่ยวกับเรา</a></li>
-                        <li><a href="{{ route('home') }}#categories" class="text-sm text-white/50 hover:text-white transition-colors">หมวดสินค้า</a></li>
+                        <li><a href="{{ route('home') }}#about"  class="text-sm text-white/50 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="{{ route('home') }}#categories" class="text-sm text-white/50 hover:text-white transition-colors">Product</a></li>
                         <li><a href="{{ route('dealer') }}"   class="text-sm text-white/50 hover:text-white transition-colors">Dealer Program</a></li>
-                        <li><a href="{{ route('training') }}" class="text-sm text-white/50 hover:text-white transition-colors">101 Training</a></li>
+                        <li><a href="{{ route('training') }}" class="text-sm text-white/50 hover:text-white transition-colors">Knowledge center</a></li>
                         <li><a href="{{ config('site.store_url') }}" target="_blank" rel="noopener noreferrer" class="text-sm text-white/50 hover:text-white transition-colors">Shop Online</a></li>
                     </ul>
                 </div>
 
-                {{-- Contact --}}
+                {{-- Contact Us --}}
                 <div>
-                    <h4 class="text-xs tracking-widest uppercase text-white/30 mb-6">Contact</h4>
+                    <h4 class="text-xs tracking-widest uppercase text-white/30 mb-6">Contact Us</h4>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-2">
                             <span class="text-[#c9a96e] text-xs mt-0.5">TEL</span>

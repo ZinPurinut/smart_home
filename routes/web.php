@@ -17,7 +17,7 @@ Route::get('/training', function () {
     return view('training');
 })->name('training');
 
-// Shell page หมวดสินค้า — รอทีมงานทยอยลงสินค้าแต่ละหมวด
+// Shell page Product — รอทีมงานทยอยลงสินค้าแต่ละหมวด
 Route::get('/products/{slug}', function (string $slug) {
     $categories = config('categories');
     abort_unless(isset($categories[$slug]), 404);
