@@ -10,9 +10,15 @@
      ภาพจริงจากโปรเจกต์ — ห้องพักผ่อนไฟ Warm White พร้อมม่าน
      =================================================== --}}
 <section class="section-full" id="hero" style="background:#050505;">
-    <div class="absolute inset-0 overflow-hidden">
-        <img src="{{ asset('images/proof/khaoyai-wood-bar.jpg') }}" alt="S.SMART Smart Living — บ้านที่อบอุ่นด้วยแสงไฟ Warm White"
-             class="w-full h-full object-cover" style="opacity:0.6; object-position:center 40%;">
+    <div class="absolute inset-0 overflow-hidden grid grid-cols-2">
+        <div class="relative overflow-hidden">
+            <img src="{{ asset('images/proof/IMG_3089.JPG') }}" alt="S.SMART Smart Living — บ้านที่อบอุ่นด้วยแสงไฟ Warm White"
+                 class="w-full h-full object-cover" style="opacity:0.5; object-position:center 40%;">
+        </div>
+        <div class="relative overflow-hidden">
+            <img src="{{ asset('images/proof/IMG_3082.JPG') }}" alt="S.SMART Smart Living — บ้านที่อบอุ่นด้วยแสงไฟ Warm White"
+                 class="w-full h-full object-cover" style="opacity:0.5; object-position:center 40%;">
+        </div>
         <div class="absolute inset-0" style="background:linear-gradient(100deg, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.55) 45%, rgba(20,14,5,0.25) 100%);"></div>
         <div class="absolute inset-0" style="background:radial-gradient(ellipse 70% 60% at 75% 45%, rgba(201,169,110,0.1) 0%, transparent 65%);"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
