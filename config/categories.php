@@ -14,7 +14,7 @@ return [
         'name'  => 'สวิตช์ไฟอัจฉริยะ',
         'en'    => 'Smart Switch',
         'desc'  => 'Touch Switch, WiFi/Zigbee Switch, AG Glass Series รองรับ 1–6 ช่อง',
-        'image' => 'images/proof/switch-black-marble.jpg',
+        'image' => 'images/proof/Smartswitch.png',
         'products' => [
             ['image' => 'images/products/real/zigbee-switch-1gang-black.jpg', 'name' => 'S.Smart On/Off Switch Zigbee 1 Gang', 'spec' => '118×74×36 มม. กระจก Tempered'],
             ['image' => 'images/products/real/zigbee-switch-2gang-black.jpg', 'name' => 'S.Smart On/Off Switch Zigbee 2 Gang', 'spec' => '118×74×36 มม. กระจก Tempered'],
@@ -41,7 +41,7 @@ return [
         'name'  => 'ระบบควบคุมเครื่องปรับอากาศ',
         'en'    => 'Air Conditioning Control',
         'desc'  => 'IR Controller, Thermostat, Smart AC Controller ควบคุมแอร์ทุกยี่ห้อ',
-        'image' => 'images/proof/switch-3gang-ac.jpg',
+        'image' => 'images/proof/Air control.png',
     ],
     'smart-curtain' => [
         'no'    => '03',
