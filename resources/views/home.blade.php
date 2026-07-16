@@ -11,7 +11,7 @@
      =================================================== --}}
 <section class="section-full" id="hero" style="background:#050505;">
     <div class="absolute inset-0 overflow-hidden">
-        <img src="{{ asset('images/proof/hero-warm-interior.jpg') }}" alt="S.SMART Smart Living — บ้านที่อบอุ่นด้วยแสงไฟ Warm White"
+        <img src="{{ asset('images/proof/khaoyai-wood-bar.jpg') }}" alt="S.SMART Smart Living — บ้านที่อบอุ่นด้วยแสงไฟ Warm White"
              class="w-full h-full object-cover" style="opacity:0.6; object-position:center 40%;">
         <div class="absolute inset-0" style="background:linear-gradient(100deg, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.55) 45%, rgba(20,14,5,0.25) 100%);"></div>
         <div class="absolute inset-0" style="background:radial-gradient(ellipse 70% 60% at 75% 45%, rgba(201,169,110,0.1) 0%, transparent 65%);"></div>
@@ -32,7 +32,7 @@
                 ด้วยเทคโนโลยีที่เรียบง่าย สวยงาม และเชื่อถือได้
             </p>
             <div class="flex flex-wrap gap-4 hero-item" style="--delay:0.65s;">
-                <a href="#about" class="btn-gold">เกี่ยวกับเรา</a>
+                <a href="#about" class="btn-gold">Home</a>
                 <a href="#categories" class="btn-outline">หมวดหมู่สินค้า</a>
             </div>
         </div>
@@ -68,7 +68,7 @@
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <span class="section-label">เกี่ยวกับเรา</span>
+                <span class="section-label">Home</span>
                 <h2 style="font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.02em; color:#fff; line-height:1.15; margin-bottom:1.5rem;">
                     เราไม่ใช่ผู้ขาย Smart Home<br>
                     <span style="color:#c9a96e;">เราคือผู้ออกแบบ Smart Living</span>
@@ -108,7 +108,7 @@
 </section>
 
 {{-- ===================================================
-     4. 8 PRODUCT CATEGORIES — ลิงก์ไปหมวดสินค้าในเว็บ
+     4. 8 PRODUCT CATEGORIES — ลิงก์ไปProductในเว็บ
      =================================================== --}}
 <section class="reveal" id="categories" style="background:#050505; padding:6rem 2rem;">
     <div class="max-w-7xl mx-auto">
@@ -370,9 +370,9 @@
 </section>
 
 {{-- ===================================================
-     10. CONTACT
+     10. Contact Us
      =================================================== --}}
-<section class="reveal" id="contact" style="background:#080808; padding:6rem 2rem;">
+<section class="reveal" id="Contact Us" style="background:#080808; padding:6rem 2rem;">
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
